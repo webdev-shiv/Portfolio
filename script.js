@@ -454,10 +454,7 @@
     const spotlightTags = document.getElementById('spotlight-tags');
     const spotlightCta = document.getElementById('spotlight-cta');
 
-    // Toggle Grid View
-    const toggleBtn = document.getElementById('deck-view-toggle');
     const stageContainer = document.getElementById('deck-stage-container');
-    const gridView = document.getElementById('projects-grid-view');
 
     const projectData = [
       {
@@ -699,22 +696,7 @@
       }
     }, { passive: true });
 
-    // Grid vs Deck Toggle
-    if (toggleBtn && stageContainer && gridView) {
-      toggleBtn.addEventListener('click', () => {
-        const isDeckVisible = stageContainer.style.display !== 'none';
-        if (isDeckVisible) {
-          stageContainer.style.display = 'none';
-          gridView.style.display = 'grid';
-          toggleBtn.innerHTML = '<span class="mode-icon">🎴</span><span class="mode-text">3D DECK VIEW</span>';
-        } else {
-          stageContainer.style.display = 'block';
-          gridView.style.display = 'none';
-          toggleBtn.innerHTML = '<span class="mode-icon">⊞</span><span class="mode-text">GRID VIEW</span>';
-          renderDeck(activeIndex);
-        }
-      });
-    }
+
 
     window.addEventListener('resize', () => renderDeck(activeIndex), { passive: true });
     renderDeck(0);
