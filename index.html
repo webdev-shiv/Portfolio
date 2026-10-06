@@ -1,0 +1,2528 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+  <title>Shivam Gupta </title>
+  <meta name="description"
+    content="Portfolio of Shivam Gupta — Computer Science &amp; Engineering undergraduate at RKGIT, Top 5 Finalist at Paytm Hackathon. Proficient in Python, Java, C, DSA, MERN Stack, Supabase, Vercel, and Automation.">
+
+  <!-- Modern Google Fonts matching the reference aesthetic -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Caveat:wght@600;700&family=Covered+By+Your+Grace&family=Fira+Code:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- =========================================================================
+       CINEMATIC SVG LIQUID WAVE PORTFOLIO TEXT FILL INTRO OVERLAY
+       ========================================================================= -->
+  <div id="intro-overlay" class="intro-overlay" role="dialog" aria-label="Portfolio Opening Sequence">
+    <div class="intro-backdrop"></div>
+    <div class="intro-ambient-glow"></div>
+
+    <div class="liquid-loader-stage" id="liquid-loader-stage">
+      <div class="liquid-svg-wrapper" id="liquid-svg-wrapper">
+        <svg class="liquid-text-svg" viewBox="0 0 1000 300" preserveAspectRatio="xMidYMid meet">
+          <defs>
+            <!-- Clip Path using the bold text PORTFOLIO -->
+            <clipPath id="portfolio-text-clip">
+              <text x="500" y="170" text-anchor="middle" class="liquid-text-font">PORTFOLIO</text>
+            </clipPath>
+
+            <!-- Fluid Liquid Wave Gradients -->
+            <linearGradient id="liquid-fill-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#FFFFFF" />
+              <stop offset="35%" stop-color="#FF4D58" />
+              <stop offset="75%" stop-color="#FF1A4B" />
+              <stop offset="100%" stop-color="#7A0018" />
+            </linearGradient>
+
+            <linearGradient id="liquid-wave-bg-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="rgba(255, 255, 255, 0.45)" />
+              <stop offset="50%" stop-color="rgba(255, 61, 72, 0.55)" />
+              <stop offset="100%" stop-color="rgba(255, 26, 75, 0.45)" />
+            </linearGradient>
+          </defs>
+
+          <!-- Dimmed Dark Base Text -->
+          <text x="500" y="170" text-anchor="middle" class="liquid-text-font liquid-text-bg">PORTFOLIO</text>
+
+          <!-- Liquid Animated Wave Group -->
+          <g clip-path="url(#portfolio-text-clip)">
+            <path id="wave-back" fill="url(#liquid-wave-bg-grad)" d="M 0 300 L 1000 300 Z" />
+            <path id="wave-front" fill="url(#liquid-fill-gradient)" d="M 0 300 L 1000 300 Z" />
+          </g>
+        </svg>
+
+        <!-- Loading Percentage Counter -->
+        <div class="liquid-loader-counter">
+          <span class="liquid-label">loading...</span>
+          <span id="liquid-percent-text" class="liquid-percent">0 %</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sleek Skip Button -->
+    <button id="intro-skip-btn" class="intro-skip-btn" type="button" aria-label="Skip Opening Animation">
+      <span class="skip-txt">SKIP INTRO</span>
+      <span class="skip-key">ESC</span>
+    </button>
+  </div>
+
+
+  <!-- Fixed Scroll-Driven 3D Canvas Background -->
+  <canvas id="animation-canvas"></canvas>
+
+  <!-- Top Scroll Progress Indicator -->
+  <div id="scroll-progress-bar"></div>
+
+  <!-- Sleek Top Navigation Bar -->
+  <header class="navbar">
+    <div class="nav-left">
+      <div class="nav-title-group">
+        <span class="nav-role">CSE &amp; FULL-STACK DEVELOPER</span>
+        <span class="nav-name">SHIVAM GUPTA</span>
+      </div>
+    </div>
+    <nav class="nav-links">
+      <a href="#hero" class="nav-link active">OVERVIEW</a>
+      <a href="#projects" class="nav-link">PROJECTS</a>
+      <a href="#technical-skills" class="nav-link">SKILLS</a>
+      <a href="#certifications" class="nav-link">CERTIFICATIONS</a>
+      <a href="#education-skills" class="nav-link">EDUCATION</a>
+      <a href="#leadership" class="nav-link">LEADERSHIP</a>
+      <a href="#contact" class="nav-link">CONTACT</a>
+    </nav>
+    <div class="nav-right">
+      <a href="#contact" class="nav-cta-btn">GET IN TOUCH</a>
+    </div>
+  </header>
+
+  <!-- Interactive Content Wrapper overlaid on the Scroll Animation -->
+  <main id="page-wrapper">
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero-section">
+      <!-- Huge Red Background Typography Watermark -->
+      <div class="hero-watermark">PORTFOLIO</div>
+
+      <div class="hero-container">
+        <!-- Hero Left Column -->
+        <div class="hero-left">
+          <div class="hero-intro-script">Hello, I'm</div>
+          <h1 class="hero-name">SHIVAM<br>GUPTA</h1>
+          <div class="hero-subtitle">CSE UNDERGRADUATE &amp; FULL-STACK / AUTOMATION DEVELOPER</div>
+          <p class="hero-summary">
+            I enjoy turning ideas into working products. As a computer science and engineering undergraduate at Raj
+            Kumar Goel Institute of Technology, I am building my skills in software development, full-stack
+            technologies, and automation through projects, hackathons, and continuous learning.
+          </p>
+
+          <div class="hero-badges-row">
+            <div class="hero-badge">
+              <span class="badge-icon">📍</span>
+              <span>DELHI, INDIA &middot; AVAILABLE FOR SOFTWARE DEV &amp; FULL-STACK INTERNSHIPS</span>
+            </div>
+          </div>
+
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">
+              <span>EXPLORE PROJECTS</span>
+              <span class="btn-arrow">&darr;</span>
+            </a>
+            <a href="#contact" class="btn btn-outline btn-contact-hero">
+              <span>CONTACT ME</span>
+              <span class="btn-arrow">&rarr;</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Hero Center Aperture (Allows 3D smoke animation to shine through) -->
+        <div class="hero-center-aperture" aria-hidden="true"></div>
+
+        <!-- Hero Right Column (Quote card & Stats matching reference) -->
+        <div class="hero-right">
+          <div class="hero-quote-card">
+            <span class="sparkle-icon">✦</span>
+            <p>I enjoy exploring how technology and automation can improve workflows, simplify complex tasks and create
+              better user experiences.</p>
+          </div>
+
+          <div class="hero-stats-stack">
+            <div class="stat-item">
+              <div class="stat-number">Top 5</div>
+              <div class="stat-label">PAYTM HACKATHON FINALIST</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">SIH '26</div>
+              <div class="stat-label">SMART INDIA HACKATHON CONTRIBUTOR</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">MERN+</div>
+              <div class="stat-label">FULL-STACK &amp; AUTOMATION</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SELECTED PROJECTS SECTION (3D RADIAL FANNED DECK) -->
+    <section id="projects" class="section projects-section">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <span class="red-bullet"></span>
+          <h2 class="section-title">SELECTED PROJECTS</h2>
+        </div>
+        <div class="section-header-actions">
+          <button id="deck-view-toggle" class="deck-mode-btn" type="button" aria-label="Toggle Deck or Grid View">
+            <span class="mode-icon">⊞</span>
+            <span class="mode-text">GRID VIEW</span>
+          </button>
+          <a href="https://github.com/webdev-shiv" target="_blank" rel="noopener noreferrer" class="section-link">
+            <span>VIEW ALL ON GITHUB</span>
+            <span class="arrow-right">&rarr;</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- 3D FANNED DECK SHOWCASE CONTAINER (Matching Reference Image) -->
+      <div class="deck-stage-container" id="deck-stage-container">
+        <!-- Corner Crosshairs (+) -->
+        <span class="deck-crosshair deck-ch-tl">+</span>
+        <span class="deck-crosshair deck-ch-tr">+</span>
+        <span class="deck-crosshair deck-ch-bl">+</span>
+        <span class="deck-crosshair deck-ch-br">+</span>
+
+        <!-- Editorial Banner Header (PROJECTS Headline with Center Red Bar) -->
+        <div class="deck-editorial-header">
+          <div class="deck-lead-col">
+            <span class="deck-lead-text">WELCOME</span>
+            <span class="deck-lead-text">TO MY</span>
+          </div>
+
+          <div class="deck-title-center">
+            <div class="deck-red-bar"></div>
+            <div class="deck-title-distort" aria-label="PROJECTS">
+              <span class="distort-ghost distort-top">PROJECTS</span>
+              <span class="distort-main">PROJECTS</span>
+              <span class="distort-ghost distort-bottom">PROJECTS</span>
+            </div>
+          </div>
+
+          <div class="deck-crest-col">
+            <div class="deck-eye-crest" title="Shivam Gupta Projects Emblem">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M24 6C17 6 12 11 12 18C12 21.5 13.5 24.5 16 26.5C13.5 28.5 12 31.5 12 35C12 42 17 47 24 47C31 47 36 42 36 35C36 31.5 34.5 28.5 32 26.5C34.5 24.5 36 21.5 36 18C36 11 31 6 24 6Z"
+                  stroke="currentColor" stroke-width="2.2" stroke-linecap="round" />
+                <circle cx="24" cy="24" r="5" fill="currentColor" />
+                <path d="M16 24C18 20 21 17.5 24 17.5C27 17.5 30 20 32 24C30 28 27 30.5 24 30.5C21 30.5 18 28 16 24Z"
+                  stroke="currentColor" stroke-width="2" />
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="deck-meta-subrow">
+          <span class="deck-author-tag">SHIVAM GUPTA</span>
+          <div class="deck-nav-pills">
+            <button id="deck-prev-btn" class="deck-arrow-btn" aria-label="Previous Project">&lsaquo;</button>
+            <span id="deck-counter" class="deck-counter-indicator">01 / 05</span>
+            <button id="deck-next-btn" class="deck-arrow-btn" aria-label="Next Project">&rsaquo;</button>
+          </div>
+          <span class="deck-role-tag">FULL-STACK &amp; AUTOMATION</span>
+        </div>
+
+        <!-- 3D RADIAL FANNED CARDS STAGE -->
+        <div class="deck-fan-arena" id="deck-fan-arena">
+          <!-- Card 0: Government Scheme Welfare Agent Portal (Red Crest Flagship - Matches red center card in image) -->
+          <div class="fanned-card card-ruby" data-index="0" data-url="https://github.com/webdev-shiv/Welfare-Agent"
+            role="button" tabindex="0" aria-label="Government Scheme Welfare Agent Portal">
+            <div class="card-inner">
+              <div class="card-header-bar">
+                <span class="card-num-badge">01</span>
+                <span class="card-chip">FLAGSHIP</span>
+                <span class="card-pin">&bull;</span>
+              </div>
+              <div class="card-emblem-wrap">
+                <div class="card-emblem-eye">
+                  <svg viewBox="0 0 80 80" fill="none">
+                    <rect x="25" y="10" width="30" height="60" rx="15" fill="currentColor" fill-opacity="0.15"
+                      stroke="currentColor" stroke-width="3" />
+                    <rect x="10" y="25" width="60" height="30" rx="15" fill="currentColor" fill-opacity="0.15"
+                      stroke="currentColor" stroke-width="3" />
+                    <path d="M22 40C26 31 34 26 40 26C46 26 54 31 58 40C54 49 46 54 40 54C34 54 26 49 22 40Z"
+                      fill="currentColor" />
+                    <circle cx="40" cy="40" r="5" fill="#0E0E11" />
+                  </svg>
+                </div>
+              </div>
+              <div class="card-caption">
+                <span class="card-tagline">GOOGLE ADK &bull; GEMINI AI</span>
+                <h4 class="card-title">Welfare Agent</h4>
+                <div class="card-tech-dots">
+                  <span>React</span>
+                  <span>FastAPI</span>
+                  <span>Multi-Agent</span>
+                </div>
+              </div>
+              <div class="card-foot">
+                <span class="card-action-hint">CLICK TO VIEW REPO &rarr;</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 1: SmritiCare AI (Sarthi) -->
+          <div class="fanned-card card-cosmos" data-index="1" data-url="https://github.com/webdev-shiv/sarthi"
+            role="button" tabindex="0" aria-label="SmritiCare AI (Sarthi)">
+            <div class="card-inner">
+              <div class="card-header-bar">
+                <span class="card-num-badge">02</span>
+                <span class="card-chip">SIH 2026</span>
+                <span class="card-pin">&bull;</span>
+              </div>
+              <div class="card-emblem-wrap">
+                <div class="card-emblem-cosmos">
+                  <div class="cosmos-ring ring-outer"></div>
+                  <div class="cosmos-ring ring-mid"></div>
+                  <div class="cosmos-core"></div>
+                </div>
+              </div>
+              <div class="card-caption">
+                <span class="card-tagline">AI COGNITIVE PLATFORM</span>
+                <h4 class="card-title">SmritiCare AI</h4>
+                <div class="card-tech-dots">
+                  <span>Whisper Tiny</span>
+                  <span>Voice AI</span>
+                  <span>NER Focus</span>
+                </div>
+              </div>
+              <div class="card-foot">
+                <span class="card-action-hint">CLICK TO VIEW REPO &rarr;</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Merchant Growth AI (VANIK) -->
+          <div class="fanned-card card-polestar" data-index="2" data-url="https://github.com/webdev-shiv/vanik"
+            role="button" tabindex="0" aria-label="Merchant Growth AI (VANIK)">
+            <div class="card-inner">
+              <div class="card-header-bar">
+                <span class="card-num-badge">03</span>
+                <span class="card-chip">PAYTM TOP 5</span>
+                <span class="card-pin">&bull;</span>
+              </div>
+              <div class="card-emblem-wrap">
+                <div class="card-emblem-vector">
+                  <div class="vector-grid-box">
+                    <span class="vg-line line-1"></span>
+                    <span class="vg-line line-2"></span>
+                    <span class="vg-line line-3"></span>
+                    <span class="vg-mark">1:1</span>
+                  </div>
+                </div>
+              </div>
+              <div class="card-caption">
+                <span class="card-tagline">INTELLIGENCE &amp; POS</span>
+                <h4 class="card-title">VANIK Growth</h4>
+                <div class="card-tech-dots">
+                  <span>Spring Boot</span>
+                  <span>Cognee Graph</span>
+                  <span>Soundbox AI</span>
+                </div>
+              </div>
+              <div class="card-foot">
+                <span class="card-action-hint">CLICK TO VIEW REPO &rarr;</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Sorty — Real-Time Windows Downloads Organizer -->
+          <div class="fanned-card card-cyber" data-index="3" data-url="https://github.com/webdev-shiv/sorty"
+            role="button" tabindex="0" aria-label="Sorty — Real-Time Windows Downloads Organizer">
+            <div class="card-inner">
+              <div class="card-header-bar">
+                <span class="card-num-badge">04</span>
+                <span class="card-chip">DESKTOP UTILITY</span>
+                <span class="card-pin">&bull;</span>
+              </div>
+              <div class="card-emblem-wrap">
+                <div class="card-emblem-cloud">
+                  <svg viewBox="0 0 64 64" fill="none">
+                    <rect x="16" y="16" width="32" height="32" rx="8" stroke="currentColor" stroke-width="2.5" />
+                    <path d="M24 28L32 36L40 28" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                    <line x1="32" y1="20" x2="32" y2="36" stroke="currentColor" stroke-width="2.5"
+                      stroke-linecap="round" />
+                  </svg>
+                </div>
+              </div>
+              <div class="card-caption">
+                <span class="card-tagline">PYTHON &bull; WINDOWS 11</span>
+                <h4 class="card-title">Sorty Organizer</h4>
+                <div class="card-tech-dots">
+                  <span>Tkinter</span>
+                  <span>Watchdog</span>
+                  <span>SQLite</span>
+                </div>
+              </div>
+              <div class="card-foot">
+                <span class="card-action-hint">CLICK TO VIEW REPO &rarr;</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4: The Binary Club Recruitment Portal -->
+          <div class="fanned-card card-matrix" data-index="4" data-url="https://github.com/webdev-shiv/BINARY_CLUB"
+            role="button" tabindex="0" aria-label="The Binary Club — Recruitment Portal">
+            <div class="card-inner">
+              <div class="card-header-bar">
+                <span class="card-num-badge">05</span>
+                <span class="card-chip">RECRUITMENT</span>
+                <span class="card-pin">&bull;</span>
+              </div>
+              <div class="card-emblem-wrap">
+                <div class="card-emblem-matrix">
+                  <div class="matrix-hex">
+                    <span>REACT</span>
+                    <span>NODE</span>
+                    <span>RKGIT</span>
+                  </div>
+                </div>
+              </div>
+              <div class="card-caption">
+                <span class="card-tagline">RECRUITMENT PLATFORM</span>
+                <h4 class="card-title">Binary Club Portal</h4>
+                <div class="card-tech-dots">
+                  <span>React</span>
+                  <span>Node.js</span>
+                  <span>Recruitment</span>
+                </div>
+              </div>
+              <div class="card-foot">
+                <span class="card-action-hint">CLICK TO VIEW REPO &rarr;</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TURNTABLE COMPASS DIAL (Rotating Disc matching reference image) -->
+        <div class="turntable-container">
+          <div class="turntable-pointer">
+            <span class="turntable-needle">&#9650;</span>
+            <span class="turntable-label">ACTIVE</span>
+          </div>
+          <div class="turntable-disc" id="turntable-disc">
+            <div class="disc-outer-ring"></div>
+            <div class="disc-dashed-ring"></div>
+            <div class="disc-inner-track">
+              <span class="disc-text-node dt-0">01 &bull; WELFARE</span>
+              <span class="disc-text-node dt-1">02 &bull; SMRITI</span>
+              <span class="disc-text-node dt-2">03 &bull; VANIK</span>
+              <span class="disc-text-node dt-3">04 &bull; SORTY</span>
+              <span class="disc-text-node dt-4">05 &bull; BINARY CLUB</span>
+            </div>
+            <div class="disc-center-hub">
+              <span class="hub-dot"></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ACTIVE PROJECT SPOTLIGHT DETAILS BAR -->
+        <div class="active-project-spotlight" id="active-project-spotlight">
+          <div class="spotlight-left">
+            <div class="spotlight-badge-row">
+              <span id="spotlight-number" class="spotlight-number">01</span>
+              <span id="spotlight-sub" class="spotlight-sub">Full-Stack React + Vite &bull; ADK Multi-Agent &bull;
+                Gemini AI</span>
+            </div>
+            <h3 id="spotlight-title" class="spotlight-title">Government Scheme Welfare Agent Portal</h3>
+            <p id="spotlight-desc" class="spotlight-desc">
+              An AI-powered Government Welfare Operating System built on Google's Agent Development Kit (ADK) and
+              Gemini. Features an interactive React + Vite citizen dashboard with a WhatsApp-style AI assistant,
+              document vault, and NGO portal, paired with a FastAPI backend managing 8 specialized sub-agents for scheme
+              discovery, eligibility evaluation, and fraud scoring.
+            </p>
+            <div id="spotlight-tags" class="spotlight-tags">
+              <span class="tag">React + Vite</span>
+              <span class="tag">Gemini AI</span>
+              <span class="tag">Google ADK</span>
+              <span class="tag">FastAPI</span>
+              <span class="tag">Multi-Agent</span>
+              <span class="tag">Document Vault</span>
+              <span class="tag">Accessibility</span>
+            </div>
+          </div>
+
+          <div class="spotlight-right">
+            <a id="spotlight-cta" href="https://github.com/webdev-shiv/Welfare-Agent" target="_blank"
+              rel="noopener noreferrer" class="spotlight-btn">
+              <span>EXPLORE REPOSITORY</span>
+              <span class="btn-arrow">&nearr;</span>
+            </a>
+            <span class="spotlight-note">Swipe horizontally or use &larr; &rarr; arrows</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ALTERNATIVE GRID VIEW (Hidden by default, toggleable for full comparative view) -->
+      <div class="projects-grid" id="projects-grid-view" style="display: none;">
+        <!-- Project 1 -->
+        <article class="project-card">
+          <div class="project-mockup">
+            <div class="mockup-header">
+              <span class="mock-dot dot-red"></span>
+              <span class="mock-dot dot-yellow"></span>
+              <span class="mock-dot dot-green"></span>
+              <span class="mock-title">welfare_agent.py &bull; ADK &bull; React</span>
+            </div>
+            <div class="mockup-code">
+              <span class="code-line"><span class="c-keyword">from</span> google.adk <span
+                  class="c-keyword">import</span> CoordinatorAgent</span>
+              <span class="code-line"><span class="c-keyword">async def</span> <span
+                  class="c-func">evaluate_scheme_eligibility</span>(citizen_profile):</span>
+              <span class="code-line">&nbsp;&nbsp;<span class="c-comment"># Gemini Multi-Agent: 8 sub-agents &amp; fraud
+                  scoring</span></span>
+              <span class="code-line">&nbsp;&nbsp;<span class="c-keyword">return await</span>
+                coordinator.dispatch_search(citizen_profile)</span>
+            </div>
+            <div class="mockup-glow"></div>
+          </div>
+          <div class="project-info">
+            <div class="project-meta-row">
+              <span class="project-num">01</span>
+              <div class="project-titles">
+                <h3 class="project-name"><a href="https://github.com/webdev-shiv/Welfare-Agent" target="_blank"
+                    rel="noopener noreferrer" style="color: inherit; text-decoration: none;">Government Scheme Welfare
+                    Agent Portal</a></h3>
+                <span class="project-sub">Full-Stack React + Vite &bull; ADK Multi-Agent &bull; Gemini AI</span>
+              </div>
+              <a href="https://github.com/webdev-shiv/Welfare-Agent" target="_blank" rel="noopener noreferrer"
+                class="project-arrow-link" aria-label="Open Welfare Agent on GitHub">&rarr;</a>
+            </div>
+            <p class="project-desc">
+              An AI-powered Government Welfare Operating System built on Google's Agent Development Kit (ADK) and
+              Gemini. Features an interactive React + Vite citizen dashboard with a WhatsApp-style AI assistant,
+              document vault, and NGO portal, paired with a FastAPI backend managing 8 specialized sub-agents for scheme
+              discovery, eligibility evaluation, and fraud scoring.
+            </p>
+            <div class="project-tags">
+              <span class="tag">React + Vite</span>
+              <span class="tag">Gemini AI</span>
+              <span class="tag">Google ADK</span>
+              <span class="tag">FastAPI</span>
+              <span class="tag">Multi-Agent</span>
+              <span class="tag">Document Vault</span>
+              <span class="tag">Accessibility</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-card">
+          <div class="project-mockup">
+            <div class="mockup-header">
+              <span class="mock-dot dot-red"></span>
+              <span class="mock-dot dot-yellow"></span>
+              <span class="mock-dot dot-green"></span>
+              <span class="mock-title">smriticare.jsx &bull; Whisper &bull; AI Adaptive Engine</span>
+            </div>
+            <div class="mockup-code">
+              <span class="code-line"><span class="c-keyword">const</span> adaptiveLevel = <span
+                  class="c-func">calculateAdaptiveDifficulty</span>({ accuracy, responseTime });</span>
+              <span class="code-line"><span class="c-comment">// Transformers.js + Whisper Tiny browser
+                  transcription</span></span>
+              <span class="code-line"><span class="c-keyword">const</span> voiceIntent = <span
+                  class="c-keyword">await</span> whisperModel.<span
+                  class="c-func">transcribe</span>(audioStream);</span>
+              <span class="code-line"><span class="c-keyword">return</span> &lt;<span
+                  class="c-func">SmritiCareDashboard</span> nerRegion={<span class="c-val">"Assam"</span>}
+                level={adaptiveLevel} /&gt;;</span>
+            </div>
+            <div class="mockup-glow"></div>
+          </div>
+          <div class="project-info">
+            <div class="project-meta-row">
+              <span class="project-num">02</span>
+              <div class="project-titles">
+                <h3 class="project-name"><a href="https://github.com/webdev-shiv/sarthi" target="_blank"
+                    rel="noopener noreferrer" style="color: inherit; text-decoration: none;">SmritiCare AI &mdash;
+                    Cognitive Platform (Sarthi)</a></h3>
+                <span class="project-sub">SIH 2026 Internal Hackathon Shortlist &bull; Team Hactivators</span>
+              </div>
+              <a href="https://github.com/webdev-shiv/sarthi" target="_blank" rel="noopener noreferrer"
+                class="project-arrow-link" aria-label="Open SmritiCare on GitHub">&rarr;</a>
+            </div>
+            <p class="project-desc">
+              An AI-powered solution developed by Team Hactivators, shortlisted in the Internal Hackathon for Smart
+              India Hackathon (SIH) 2026. Built with the aim of creating meaningful impact through technology, spanning
+              research, ideation, AI development, PPT preparation, and presentation. Features 4 adaptive cognitive
+              games, transparent AI Adaptive Difficulty engine, 8-language voice assistant with offline Whisper Tiny
+              browser transcription, NER cultural personalization across 8 states, and a caregiver telemetry dashboard.
+            </p>
+            <div class="project-tags">
+              <span class="tag">SIH 2026 Shortlist</span>
+              <span class="tag">Team Hactivators</span>
+              <span class="tag">React 18 + Vite</span>
+              <span class="tag">Whisper Tiny</span>
+              <span class="tag">AI Adaptive Engine</span>
+              <span class="tag">Web Speech API</span>
+              <span class="tag">Offline-First</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="project-card">
+          <div class="project-mockup">
+            <div class="mockup-header">
+              <span class="mock-dot dot-red"></span>
+              <span class="mock-dot dot-yellow"></span>
+              <span class="mock-dot dot-green"></span>
+              <span class="mock-title">vanik_memory.py &bull; Cognee Graph &bull; Spring Boot</span>
+            </div>
+            <div class="mockup-code">
+              <span class="code-line"><span class="c-keyword">class</span> <span
+                  class="c-func">VANIKMemoryEngine</span>:</span>
+              <span class="code-line">&nbsp;&nbsp;<span class="c-comment"># Top 5 Finalist &mdash; Paytm Merchant
+                  Intelligence Hackathon</span></span>
+              <span class="code-line">&nbsp;&nbsp;<span class="c-keyword">def</span> <span
+                  class="c-func">query_graph</span>(self, merchant_id):</span>
+              <span class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-keyword">return</span>
+                cognee.recall(node=<span class="c-str">"slump_5_to_8pm"</span>, source_provenance=<span
+                  class="c-val">True</span>)</span>
+            </div>
+            <div class="mockup-glow"></div>
+          </div>
+          <div class="project-info">
+            <div class="project-meta-row">
+              <span class="project-num">03</span>
+              <div class="project-titles">
+                <h3 class="project-name"><a href="https://github.com/webdev-shiv/vanik" target="_blank"
+                    rel="noopener noreferrer" style="color: inherit; text-decoration: none;">Merchant Growth AI
+                    (VANIK)</a></h3>
+                <span class="project-sub">Top 5 Finalist &bull; Paytm Merchant Intelligence Hackathon</span>
+              </div>
+              <a href="https://github.com/webdev-shiv/vanik" target="_blank" rel="noopener noreferrer"
+                class="project-arrow-link" aria-label="Open VANIK on GitHub">&rarr;</a>
+            </div>
+            <p class="project-desc">
+              An AI-powered merchant intelligence and POS platform that turns transaction &amp; Soundbox telemetry into
+              explainable growth decisions. Integrates Cognee Knowledge Graph episodic memory for root-cause revenue
+              slump diagnosis, What-If microeconomic campaign simulations, real-time POS billing with dynamic UPI QR
+              &amp; Soundbox voice synthesis, and Spring Boot + FastAPI architecture.
+            </p>
+            <div class="project-tags">
+              <span class="tag">Next.js 14</span>
+              <span class="tag">Java 21 Spring Boot</span>
+              <span class="tag">FastAPI</span>
+              <span class="tag">Cognee Knowledge Graph</span>
+              <span class="tag">POS Billing</span>
+              <span class="tag">Soundbox Voice AI</span>
+              <span class="tag">Top 5 Finalist</span>
+            </div>
+            <!-- Project 4 -->
+            <article class="project-card">
+              <div class="project-mockup">
+                <div class="mockup-header">
+                  <span class="mock-dot dot-red"></span>
+                  <span class="mock-dot dot-yellow"></span>
+                  <span class="mock-dot dot-green"></span>
+                  <span class="mock-title">sorty_organizer.py &bull; Watchdog &bull; SQLite</span>
+                </div>
+                <div class="mockup-code">
+                  <span class="code-line"><span class="c-keyword">class</span> <span
+                      class="c-func">DownloadOrganizerEngine</span>:</span>
+                  <span class="code-line">&nbsp;&nbsp;<span class="c-comment"># Watchdog real-time file watcher &amp; 0%
+                      data loss guarantee</span></span>
+                  <span class="code-line">&nbsp;&nbsp;<span class="c-keyword">def</span> <span
+                      class="c-func">organize_downloads</span>(self, file_event):</span>
+                  <span class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-keyword">return</span>
+                    classifier.move_atomic(file_event, undo_history=<span class="c-val">True</span>)</span>
+                </div>
+                <div class="mockup-glow"></div>
+              </div>
+              <div class="project-info">
+                <div class="project-meta-row">
+                  <span class="project-num">04</span>
+                  <div class="project-titles">
+                    <h3 class="project-name"><a href="https://github.com/webdev-shiv/sorty" target="_blank"
+                        rel="noopener noreferrer" style="color: inherit; text-decoration: none;">Sorty &mdash; Real-Time
+                        Windows Downloads Organizer</a></h3>
+                    <span class="project-sub">Python (Tkinter + ttk) &bull; Watchdog &bull; SQLite &bull; Windows 11
+                      UI</span>
+                  </div>
+                  <a href="https://github.com/webdev-shiv/sorty" target="_blank" rel="noopener noreferrer"
+                    class="project-arrow-link" aria-label="Open Sorty on GitHub">&rarr;</a>
+                </div>
+                <p class="project-desc">
+                  A lightweight, high-performance, deterministic Windows desktop productivity utility that automatically
+                  organizes files in your Windows Downloads folder in real time with 100% zero data loss guarantee and
+                  1-click reversible undo.
+                </p>
+                <div class="project-tags">
+                  <span class="tag">Python</span>
+                  <span class="tag">Tkinter</span>
+                  <span class="tag">Watchdog</span>
+                  <span class="tag">SQLite</span>
+                  <span class="tag">PyInstaller</span>
+                  <span class="tag">Windows 11 UI</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Project 5 -->
+            <article class="project-card">
+              <div class="project-mockup">
+                <div class="mockup-header">
+                  <span class="mock-dot dot-red"></span>
+                  <span class="mock-dot dot-yellow"></span>
+                  <span class="mock-dot dot-green"></span>
+                  <span class="mock-title">binary_club_recruitment.jsx &bull; RKGIT</span>
+                </div>
+                <div class="mockup-code">
+                  <span class="code-line"><span class="c-keyword">const</span> recruitmentWorkflow = {</span>
+                  <span class="code-line">&nbsp;&nbsp;candidateRegistration: <span class="c-val">true</span>,</span>
+                  <span class="code-line">&nbsp;&nbsp;peerEvaluations: [<span class="c-str">"DSA"</span>, <span
+                      class="c-str">"Full-Stack"</span>, <span class="c-str">"Automation"</span>],</span>
+                  <span class="code-line">&nbsp;&nbsp;coordinatorShortlisting: <span
+                      class="c-func">simplifiedSelection</span>()</span>
+                  <span class="code-line">};</span>
+                </div>
+                <div class="mockup-glow"></div>
+              </div>
+              <div class="project-info">
+                <div class="project-meta-row">
+                  <span class="project-num">05</span>
+                  <div class="project-titles">
+                    <h3 class="project-name"><a href="https://github.com/webdev-shiv/BINARY_CLUB" target="_blank"
+                        rel="noopener noreferrer" style="color: inherit; text-decoration: none;">The Binary Club &mdash;
+                        Recruitment Portal</a></h3>
+                    <span class="project-sub">Recruitment &amp; Onboarding Platform &bull; RKGIT</span>
+                  </div>
+                  <a href="https://github.com/webdev-shiv/BINARY_CLUB" target="_blank" rel="noopener noreferrer"
+                    class="project-arrow-link" aria-label="Open Binary Club Portal on GitHub">&rarr;</a>
+                </div>
+                <p class="project-desc">
+                  Collegiate recruitment and onboarding platform built for The Binary Club, RKGIT. Streamlined candidate
+                  registration and recruitment workflows, enabled centralized candidate tracking, implemented peer-based
+                  technical evaluation processes, and simplified shortlisting for coordinators to make member selection
+                  faster and more organized.
+                </p>
+                <div class="project-tags">
+                  <span class="tag">React.js</span>
+                  <span class="tag">Node.js</span>
+                  <span class="tag">Recruitment Workflows</span>
+                  <span class="tag">Peer Evaluations</span>
+                  <span class="tag">RKGIT</span>
+                  <span class="tag">The Binary Club</span>
+                </div>
+              </div>
+            </article>
+          </div>
+    </section>
+
+    <!-- TECHNICAL ARSENAL: DUAL CONTINUOUS HORIZONTAL MARQUEE SECTION (Matching Reference) -->
+    <section id="technical-skills" class="section tech-marquee-section">
+      <div class="tech-marquee-header">
+        <h2 class="tech-marquee-title">TECHNICAL SKILLS</h2>
+      </div>
+
+      <div class="marquee-scroller-wrap">
+        <!-- Row 1: Continuous Horizontal Left -->
+        <div class="marquee-row">
+          <div class="marquee-track track-left">
+            <!-- Group 1 -->
+            <div class="tech-marquee-item">
+              <div class="tech-item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                </svg>
+              </div>
+              <div class="tech-item-content">
+                <span class="tech-item-name">Python</span>
+                <span class="tech-item-sub">Automation &bull; Backend</span>
+              </div>
+            </div>
+
+            <div class="tech-marquee-item">
+              <div class="tech-item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
+                  <path d="M2 12h20" />
+                </svg>
+              </div>
+              <div class="tech-item-content">
+                <span class="tech-item-name">React.js</span>
+                <span class="tech-item-sub">Frontend &bull; Vite &bull; Next</span>
+              </div>
+            </div>
+
+            <div class="tech-marquee-item">
+              <div class="tech-item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon
+                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                </svg>
+              </div>
+              <div class="tech-item-content">
+                <span class="tech-item-name">Google ADK</span>
+                <span class="tech-item-sub">Multi-Agent Systems</span>
+              </div>
+            </div>
+
+            <div class="tech-marquee-item">
+              <div class="tech-item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="4" y="4" width="16" height="16" rx="2" />
+                  <rect x="9" y="9" width="6" height="6" />
+                  <line x1="9" y1="1" x2="9" y2="4" />
+                  <line x1="15" y1="1" x2="15" y2="4" />
+                  <line x1="9" y1="20" x2="9" y2="23" />
+                  <line x1="15" y1="20" x2="15" y2="23" />
+                  <line x1="20" y1="9" x2="23" y2="9" />
+                  <line x1="20" y1="14" x2="23" y2="14" />
+                  <line x1="1" y1="9" x2="4" y2="9" />
+                  <line x1="1" y1="14" x2="4" y2="14" />
+                </svg>
+              </div>
+              <div class="tech-item-content">
+                <span class="tech-item-name">Java</span>
+                <span class="tech-item-sub">Enterprise &bull; OOP</span>
+              </div>
+            </div>
+
+            <div class="tech-marquee-item">
+              <div class="tech-item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <ellipse cx="12" cy="5" rx="9" ry="3" />
+                  <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
+                  <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
+                </svg>
+              </div>
+              <div class="tech-item-content">
+                <span class="tech-item-name">MongoDB</span>
+                <span class="tech-item-sub">Document Database</span>
+              </div>
+            </div>
+
+            <div class="tech-marquee-item">
+              <div class="tech-item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path
+                    d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                </svg>
+              </div>
+              <div class="tech-item-content">
+                <span class="tech-item-name">Gemini AI</span>
+                <span class="tech-item-sub">LLM &bull; Multi-Modal</span>
+              </div>
+            </div>
+
+            <div class="tech-marquee-item">
+              <div class="tech-item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                </svg>
+              </div>
+              <div class="tech-item-content">
+                <span class="tech-item-name">Spring Boot</span>
+                <span class="tech-item-sub">Java Microservices</span>
+              </div>
+            </div>
+
+            <div class="tech-marquee-item">
+              <div class="tech-item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z" />
+                </svg>
+              </div>
+              <div class="tech-item-content">
+                <span class="tech-item-name">Supabase</span>
+                <span class="tech-item-sub">PostgreSQL &bull; Auth</span>
+              </div>
+            </div>
+
+            <div class="tech-marquee-item">
+              <div class="tech-item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                </svg>
+              </div>
+              <div class="tech-item-content">
+                <span class="tech-item-name">Vercel</span>
+                <span class="tech-item-sub">Edge Cloud CI/CD</span>
+              </div>
+            </div>
+
+            <div class="tech-marquee-item">
+              <div class="tech-item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="3" />
+                  <circle cx="19" cy="5" r="2" />
+                  <circle cx="5" cy="19" r="2" />
+                  <path d="M10.4 10.4 6.4 17.6" />
+                  <path d="M17.6 6.4 13.6 10.4" />
+                </svg>
+              </div>
+              <div class="tech-item-content">
+                <span class="tech-item-name">Cognee</span>
+                <span class="tech-item-sub">Knowledge Graph AI</span>
+              </div>
+            </div>
+
+            <!-- Group 1 Duplicate for Seamless Loop -->
+            <div class="tech-marquee-item">
+              <div class="tech-item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                </svg>
+              </div>
+              <div class="tech-item-content">
+                <span class="tech-item-name">Python</span>
+                <span class="tech-item-sub">Automation &bull; Backend</span>
+              </div>
+            </div>
+
+            <div class="tech-marquee-item">
+              <div class="tech-item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
+                  <path d="M2 12h20" />
+                </svg>
+              </div>
+              <div class="tech-item-content">
+                <span class="tech-item-name">React.js</span>
+                <span class="tech-item-sub">Frontend &bull; Vite &bull; Next</span>
+              </div>
+            </div>
+
+            <div class="tech-marquee-item">
+              <div class="tech-item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon
+                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                </svg>
+              </div>
+              <div class="tech-item-content">
+                <span class="tech-item-name">Google ADK</span>
+                <span class="tech-item-sub">Multi-Agent Systems</span>
+              </div>
+            </div>
+
+            <div class="tech-marquee-item">
+              <div class="tech-item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="4" y="4" width="16" height="16" rx="2" />
+                  <rect x="9" y="9" width="6" height="6" />
+                  <line x1="9" y1="1" x2="9" y2="4" />
+                  <line x1="15" y1="1" x2="15" y2="4" />
+                  <line x1="9" y1="20" x2="9" y2="23" />
+                  <line x1="15" y1="20" x2="15" y2="23" />
+                  <line x1="20" y1="9" x2="23" y2="9" />
+                  <line x1="20" y1="14" x2="23" y2="14" />
+                  <line x1="1" y1="9" x2="4" y2="9" />
+                  <line x1="1" y1="14" x2="4" y2="14" />
+                </svg>
+              </div>
+              <div class="tech-item-content">
+                <span class="tech-item-name">Java</span>
+                <span class="tech-item-sub">Enterprise &bull; OOP</span>
+              </div>
+            </div>
+
+            <div class="tech-marquee-item">
+              <div class="tech-item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <ellipse cx="12" cy="5" rx="9" ry="3" />
+                  <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
+                  <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
+                </svg>
+              </div>
+              <div class="tech-item-content">
+                <span class="tech-item-name">MongoDB</span>
+                <span class="tech-item-sub">Document Database</span>
+              </div>
+            </div>
+
+            <div class="tech-marquee-item">
+              <div class="tech-item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path
+                    d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                </svg>
+              </div>
+              <div class="tech-item-content">
+                <span class="tech-item-name">Gemini AI</span>
+                <span class="tech-item-sub">LLM &bull; Multi-Modal</span>
+              </div>
+            </div>
+
+            <div class="tech-marquee-item">
+              <div class="tech-item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                </svg>
+              </div>
+              <div class="tech-item-content">
+                <span class="tech-item-name">Spring Boot</span>
+                <span class="tech-item-sub">Java Microservices</span>
+              </div>
+            </div>
+
+            <div class="tech-marquee-item">
+              <div class="tech-item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z" />
+                </svg>
+              </div>
+              <div class="tech-item-content">
+                <span class="tech-item-name">Supabase</span>
+                <span class="tech-item-sub">PostgreSQL &bull; Auth</span>
+              </div>
+            </div>
+
+            <div class="tech-marquee-item">
+              <div class="tech-item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                </svg>
+              </div>
+              <div class="tech-item-content">
+                <span class="tech-item-name">Vercel</span>
+                <span class="tech-item-sub">Edge Cloud CI/CD</span>
+              </div>
+            </div>
+
+            <div class="tech-marquee-item">
+              <div class="tech-item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="3" />
+                  <circle cx="19" cy="5" r="2" />
+                  <circle cx="5" cy="19" r="2" />
+                  <path d="M10.4 10.4 6.4 17.6" />
+                  <path d="M17.6 6.4 13.6 10.4" />
+                </svg>
+              </div>
+              <div class="tech-item-content">
+                <span class="tech-item-name">Cognee</span>
+                <span class="tech-item-sub">Knowledge Graph AI</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Row 2: Continuous Horizontal Right -->
+        <div class="marquee-row">
+          <div class="marquee-track track-right">
+            <!-- Group 2 -->
+            <div class="tech-marquee-item">
+              <div class="tech-item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                </svg>
+              </div>
+              <div class="tech-item-content">
+                <span class="tech-item-name">FastAPI</span>
+                <span class="tech-item-sub">High-Speed Python APIs</span>
+              </div>
+            </div>
+
+            <div class="tech-marquee-item">
+              <div class="tech-item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 11a9 9 0 0 1 9 9" />
+                  <path d="M4 4a16 16 0 0 1 16 16" />
+                  <circle cx="5" cy="19" r="1" />
+                </svg>
+              </div>
+              <div class="tech-item-content">
+                <span class="tech-item-name">Express.js</span>
+                <span class="tech-item-sub">REST Middleware &bull; Node</span>
+              </div>
+            </div>
+
+            <div class="tech-marquee-item">
+              <div class="tech-item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="4" y1="9" x2="20" y2="9" />
+                  <line x1="4" y1="15" x2="20" y2="15" />
+                  <line x1="10" y1="3" x2="8" y2="21" />
+                  <line x1="16" y1="3" x2="14" y2="21" />
+                </svg>
+              </div>
+              <div class="tech-item-content">
+                <span class="tech-item-name">SQL &bull; MySQL</span>
+                <span class="tech-item-sub">Relational Schema &bull; Indexing</span>
+              </div>
+            </div>
+
+            <div class="tech-marquee-item">
+              <div class="tech-item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="9" />
+                  <path d="M12 3v18" />
+                  <path d="M3 12h18" />
+                </svg>
+              </div>
+              <div class="tech-item-content">
+                <span class="tech-item-name">Node.js</span>
+                <span class="tech-item-sub">Asynchronous Runtime</span>
+              </div>
+            </div>
+
+            <div class="tech-marquee-item">
+              <div class="tech-item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z" />
+                </svg>
+              </div>
+              <div class="tech-item-content">
+                <span class="tech-item-name">DSA &bull; Algorithms</span>
+                <span class="tech-item-sub">Low-Latency Complexity</span>
+              </div>
+            </div>
+
+            <div class="tech-marquee-item">
+              <div class="tech-item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z" />
+                  <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
+                  <line x1="12" y1="19" x2="12" y2="23" />
+                  <line x1="8" y1="23" x2="16" y2="23" />
+                </svg>
+              </div>
+              <div class="tech-item-content">
+                <span class="tech-item-name">Whisper Tiny</span>
+                <span class="tech-item-sub">Edge Speech Recognition</span>
+              </div>
+            </div>
+
+            <div class="tech-marquee-item">
+              <div class="tech-item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 3h18v18H3zM8 12h8M12 8v8" />
+                </svg>
+              </div>
+              <div class="tech-item-content">
+                <span class="tech-item-name">C Language</span>
+                <span class="tech-item-sub">Low-Level Memory Systems</span>
+              </div>
+            </div>
+
+            <div class="tech-marquee-item">
+              <div class="tech-item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 3v18h18" />
+                  <path d="m19 9-5 5-4-4-3 3" />
+                </svg>
+              </div>
+              <div class="tech-item-content">
+                <span class="tech-item-name">Recharts</span>
+                <span class="tech-item-sub">Data Visualization &bull; Telemetry</span>
+              </div>
+            </div>
+
+            <div class="tech-marquee-item">
+              <div class="tech-item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path
+                    d="M16.5 9.4 7.55 4.24a1.78 1.78 0 0 0-2.5 1.55v12.42a1.78 1.78 0 0 0 2.5 1.55L16.5 14.6a1.78 1.78 0 0 0 0-3.2z" />
+                </svg>
+              </div>
+              <div class="tech-item-content">
+                <span class="tech-item-name">Next.js 14</span>
+                <span class="tech-item-sub">App Router &bull; Full-Stack</span>
+              </div>
+            </div>
+
+            <div class="tech-marquee-item">
+              <div class="tech-item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="m4.93 4.93 4.24 4.24" />
+                  <path d="m14.83 9.17 4.24-4.24" />
+                  <path d="m14.83 14.83 4.24 4.24" />
+                  <path d="m9.17 14.83-4.24 4.24" />
+                </svg>
+              </div>
+              <div class="tech-item-content">
+                <span class="tech-item-name">OOP &bull; DBMS</span>
+                <span class="tech-item-sub">Design Patterns &bull; Schemas</span>
+              </div>
+            </div>
+
+            <!-- Group 2 Duplicate for Seamless Loop -->
+            <div class="tech-marquee-item">
+              <div class="tech-item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                </svg>
+              </div>
+              <div class="tech-item-content">
+                <span class="tech-item-name">FastAPI</span>
+                <span class="tech-item-sub">High-Speed Python APIs</span>
+              </div>
+            </div>
+
+            <div class="tech-marquee-item">
+              <div class="tech-item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 11a9 9 0 0 1 9 9" />
+                  <path d="M4 4a16 16 0 0 1 16 16" />
+                  <circle cx="5" cy="19" r="1" />
+                </svg>
+              </div>
+              <div class="tech-item-content">
+                <span class="tech-item-name">Express.js</span>
+                <span class="tech-item-sub">REST Middleware &bull; Node</span>
+              </div>
+            </div>
+
+            <div class="tech-marquee-item">
+              <div class="tech-item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="4" y1="9" x2="20" y2="9" />
+                  <line x1="4" y1="15" x2="20" y2="15" />
+                  <line x1="10" y1="3" x2="8" y2="21" />
+                  <line x1="16" y1="3" x2="14" y2="21" />
+                </svg>
+              </div>
+              <div class="tech-item-content">
+                <span class="tech-item-name">SQL &bull; MySQL</span>
+                <span class="tech-item-sub">Relational Schema &bull; Indexing</span>
+              </div>
+            </div>
+
+            <div class="tech-marquee-item">
+              <div class="tech-item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="9" />
+                  <path d="M12 3v18" />
+                  <path d="M3 12h18" />
+                </svg>
+              </div>
+              <div class="tech-item-content">
+                <span class="tech-item-name">Node.js</span>
+                <span class="tech-item-sub">Asynchronous Runtime</span>
+              </div>
+            </div>
+
+            <div class="tech-marquee-item">
+              <div class="tech-item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z" />
+                </svg>
+              </div>
+              <div class="tech-item-content">
+                <span class="tech-item-name">DSA &bull; Algorithms</span>
+                <span class="tech-item-sub">Low-Latency Complexity</span>
+              </div>
+            </div>
+
+            <div class="tech-marquee-item">
+              <div class="tech-item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z" />
+                  <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
+                  <line x1="12" y1="19" x2="12" y2="23" />
+                  <line x1="8" y1="23" x2="16" y2="23" />
+                </svg>
+              </div>
+              <div class="tech-item-content">
+                <span class="tech-item-name">Whisper Tiny</span>
+                <span class="tech-item-sub">Edge Speech Recognition</span>
+              </div>
+            </div>
+
+            <div class="tech-marquee-item">
+              <div class="tech-item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 3h18v18H3zM8 12h8M12 8v8" />
+                </svg>
+              </div>
+              <div class="tech-item-content">
+                <span class="tech-item-name">C Language</span>
+                <span class="tech-item-sub">Low-Level Memory Systems</span>
+              </div>
+            </div>
+
+            <div class="tech-marquee-item">
+              <div class="tech-item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 3v18h18" />
+                  <path d="m19 9-5 5-4-4-3 3" />
+                </svg>
+              </div>
+              <div class="tech-item-content">
+                <span class="tech-item-name">Recharts</span>
+                <span class="tech-item-sub">Data Visualization &bull; Telemetry</span>
+              </div>
+            </div>
+
+            <div class="tech-marquee-item">
+              <div class="tech-item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path
+                    d="M16.5 9.4 7.55 4.24a1.78 1.78 0 0 0-2.5 1.55v12.42a1.78 1.78 0 0 0 2.5 1.55L16.5 14.6a1.78 1.78 0 0 0 0-3.2z" />
+                </svg>
+              </div>
+              <div class="tech-item-content">
+                <span class="tech-item-name">Next.js 14</span>
+                <span class="tech-item-sub">App Router &bull; Full-Stack</span>
+              </div>
+            </div>
+
+            <div class="tech-marquee-item">
+              <div class="tech-item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="m4.93 4.93 4.24 4.24" />
+                  <path d="m14.83 9.17 4.24-4.24" />
+                  <path d="m14.83 14.83 4.24 4.24" />
+                  <path d="m9.17 14.83-4.24 4.24" />
+                </svg>
+              </div>
+              <div class="tech-item-content">
+                <span class="tech-item-name">OOP &bull; DBMS</span>
+                <span class="tech-item-sub">Design Patterns &bull; Schemas</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         CERTIFICATES & CREDENTIALS SECTION (3D Radial Showcase Matching Reference)
+         ========================================================================= -->
+    <section id="certifications" class="section cert-section">
+      <!-- Ambient Top Subtle Glow -->
+      <div class="cert-ambient-glow" aria-hidden="true"></div>
+
+      <!-- Top Header matching Reference -->
+      <div class="cert-header">
+        <div class="cert-brand-badge">
+          <svg class="cert-badge-icon" width="22" height="22" viewBox="0 0 24 24" fill="none">
+            <path d="M12 2L14.7 8.3L21.5 9.1L16.4 13.8L17.8 20.6L12 17.2L6.2 20.6L7.6 13.8L2.5 9.1L9.3 8.3L12 2Z"
+              fill="#E50914" stroke="#FF2A2A" stroke-width="1.5" stroke-linejoin="round" />
+          </svg>
+          <span class="cert-brand-text">CERTIFICATES</span>
+        </div>
+
+        <h2 class="cert-headline">
+          Many learn. One masters.<br>
+          None stop.
+        </h2>
+
+      </div>
+
+      <!-- 3D Fan Stage Arena -->
+      <div class="cert-stage-wrapper">
+        <div class="cert-deck-arena" id="cert-deck-arena">
+
+          <!-- Card 1: Google Cloud Intro to GenAI -->
+          <div class="cert-card active" data-index="0" data-issuer="Google Cloud"
+            data-title="Introduction to Generative AI" data-subtitle="Core LLM Principles &amp; Architectures"
+            data-date="June 19, 2026" data-code="10366423"
+            data-pdf="certifiacte/Introduction to Generative AI GOOGLE.pdf"
+            data-img="cert_thumbs/introduction_to_generative_ai_google.webp" data-verify="">
+            <div class="cert-card-inner">
+              <div class="cert-card-header">
+                <div class="cert-issuer-pill">
+                  <span class="cert-issuer-dot"></span>
+                  <span class="cert-issuer-name">Google Cloud</span>
+                </div>
+                <span class="cert-tag">GEN AI</span>
+              </div>
+              <div class="cert-preview-frame">
+                <img src="cert_thumbs/introduction_to_generative_ai_google.webp"
+                  alt="Introduction to Generative AI - Google Cloud" loading="lazy" />
+                <div class="cert-preview-glass">
+                  <span class="cert-expand-hint">PREVIEW ↗</span>
+                </div>
+              </div>
+              <div class="cert-card-footer">
+                <div class="cert-card-text">
+                  <h4 class="cert-card-title">Intro to Generative AI</h4>
+                  <p class="cert-card-sub">Code: 10366423 &bull; June 2026</p>
+                </div>
+                <div class="cert-card-num">01</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Google Cloud GenAI Studio -->
+          <div class="cert-card" data-index="1" data-issuer="Google Cloud"
+            data-title="Introduction to Generative AI Studio"
+            data-subtitle="Prompt Design, Model Tuning &amp; Vertex AI" data-date="June 19, 2026" data-code="10366499"
+            data-pdf="certifiacte/Introduction to Generative AI Studio GOOGLE.pdf"
+            data-img="cert_thumbs/introduction_to_generative_ai_studio_google.webp" data-verify="">
+            <div class="cert-card-inner">
+              <div class="cert-card-header">
+                <div class="cert-issuer-pill">
+                  <span class="cert-issuer-dot"></span>
+                  <span class="cert-issuer-name">Google Cloud</span>
+                </div>
+                <span class="cert-tag">VERTEX AI</span>
+              </div>
+              <div class="cert-preview-frame">
+                <img src="cert_thumbs/introduction_to_generative_ai_studio_google.webp"
+                  alt="Introduction to Generative AI Studio - Google Cloud" loading="lazy" />
+                <div class="cert-preview-glass">
+                  <span class="cert-expand-hint">PREVIEW ↗</span>
+                </div>
+              </div>
+              <div class="cert-card-footer">
+                <div class="cert-card-text">
+                  <h4 class="cert-card-title">Intro to GenAI Studio</h4>
+                  <p class="cert-card-sub">Code: 10366499 &bull; June 2026</p>
+                </div>
+                <div class="cert-card-num">02</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Microsoft Azure Fundamentals -->
+          <div class="cert-card" data-index="2" data-issuer="Microsoft" data-title="Azure Fundamentals"
+            data-subtitle="Cloud Computing Architecture, SLAs &amp; Governance" data-date="June 19, 2026"
+            data-code="10369046" data-pdf="certifiacte/Azure fundamental from microsoft.pdf"
+            data-img="cert_thumbs/azure_fundamental_from_microsoft.webp" data-verify="">
+            <div class="cert-card-inner">
+              <div class="cert-card-header">
+                <div class="cert-issuer-pill">
+                  <span class="cert-issuer-dot"></span>
+                  <span class="cert-issuer-name">Microsoft</span>
+                </div>
+                <span class="cert-tag">AZURE CLOUD</span>
+              </div>
+              <div class="cert-preview-frame">
+                <img src="cert_thumbs/azure_fundamental_from_microsoft.webp" alt="Azure Fundamentals - Microsoft"
+                  loading="lazy" />
+                <div class="cert-preview-glass">
+                  <span class="cert-expand-hint">PREVIEW ↗</span>
+                </div>
+              </div>
+              <div class="cert-card-footer">
+                <div class="cert-card-text">
+                  <h4 class="cert-card-title">Azure Fundamentals</h4>
+                  <p class="cert-card-sub">Code: 10369046 &bull; June 2026</p>
+                </div>
+                <div class="cert-card-num">03</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4: Red Team Leaders LLM Security -->
+          <div class="cert-card" data-index="3" data-issuer="Red Team Leaders"
+            data-title="Certified LLM Security Professional (CLLMSP)"
+            data-subtitle="Adversarial Testing, Prompt Injections &amp; Red Teaming" data-date="June 20, 2026"
+            data-code="976e09d2df4a4597" data-pdf="certifiacte/certified_llm_certificate.pdf"
+            data-img="cert_thumbs/certified_llm_certificate.webp"
+            data-verify="https://courses.redteamleaders.com/exam-completion/976e09d2df4a4597">
+            <div class="cert-card-inner">
+              <div class="cert-card-header">
+                <div class="cert-issuer-pill">
+                  <span class="cert-issuer-dot"></span>
+                  <span class="cert-issuer-name">Red Team Leaders</span>
+                </div>
+                <span class="cert-tag">LLM SECURITY</span>
+              </div>
+              <div class="cert-preview-frame">
+                <img src="cert_thumbs/certified_llm_certificate.webp" alt="Certified LLM Security Professional"
+                  loading="lazy" />
+                <div class="cert-preview-glass">
+                  <span class="cert-expand-hint">PREVIEW ↗</span>
+                </div>
+              </div>
+              <div class="cert-card-footer">
+                <div class="cert-card-text">
+                  <h4 class="cert-card-title">Certified LLM Security</h4>
+                  <p class="cert-card-sub">CLLMSP Credential &bull; June 2026</p>
+                </div>
+                <div class="cert-card-num">04</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 5: ISRO IIRS Geospatial -->
+          <div class="cert-card" data-index="4" data-issuer="ISRO (IIRS)"
+            data-title="Indian Space Research Organisation (IIRS)"
+            data-subtitle="Geospatial Data, Remote Sensing &amp; Space Tech" data-date="July 26, 2026"
+            data-code="2jlXDnIdXD" data-pdf="certifiacte/isro.pdf" data-img="cert_thumbs/isro.webp"
+            data-verify="https://isrolms.iirs.gov.in/mod/customcert/verify_certificate.php">
+            <div class="cert-card-inner">
+              <div class="cert-card-header">
+                <div class="cert-issuer-pill">
+                  <span class="cert-issuer-dot"></span>
+                  <span class="cert-issuer-name">ISRO (IIRS)</span>
+                </div>
+                <span class="cert-tag">SPACE TECH</span>
+              </div>
+              <div class="cert-preview-frame">
+                <img src="cert_thumbs/isro.webp" alt="ISRO Certification" loading="lazy" />
+                <div class="cert-preview-glass">
+                  <span class="cert-expand-hint">PREVIEW ↗</span>
+                </div>
+              </div>
+              <div class="cert-card-footer">
+                <div class="cert-card-text">
+                  <h4 class="cert-card-title">ISRO IIRS Certification</h4>
+                  <p class="cert-card-sub">Govt of India &bull; July 2026</p>
+                </div>
+                <div class="cert-card-num">05</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 6: Tata GenAI Data Analytics -->
+          <div class="cert-card" data-index="5" data-issuer="Tata Group (Forage)"
+            data-title="GenAI Powered Data Analytics"
+            data-subtitle="Exploratory Analysis, Risk Profiling &amp; AI Collections" data-date="June 21, 2026"
+            data-code="TATA-GENAI" data-pdf="certifiacte/Tata GenAi.pdf" data-img="cert_thumbs/tata_genai.webp"
+            data-verify="">
+            <div class="cert-card-inner">
+              <div class="cert-card-header">
+                <div class="cert-issuer-pill">
+                  <span class="cert-issuer-dot"></span>
+                  <span class="cert-issuer-name">Tata Group</span>
+                </div>
+                <span class="cert-tag">DATA ANALYTICS</span>
+              </div>
+              <div class="cert-preview-frame">
+                <img src="cert_thumbs/tata_genai.webp" alt="Tata GenAI Data Analytics" loading="lazy" />
+                <div class="cert-preview-glass">
+                  <span class="cert-expand-hint">PREVIEW ↗</span>
+                </div>
+              </div>
+              <div class="cert-card-footer">
+                <div class="cert-card-text">
+                  <h4 class="cert-card-title">GenAI Data Analytics</h4>
+                  <p class="cert-card-sub">Job Simulation &bull; June 2026</p>
+                </div>
+                <div class="cert-card-num">06</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 7: Tata Cybersecurity Analyst -->
+          <div class="cert-card" data-index="6" data-issuer="Tata Group (Forage)"
+            data-title="Cybersecurity Analyst Job Simulation"
+            data-subtitle="IAM Strategy, Access Control &amp; Threat Defense" data-date="June 21, 2026"
+            data-code="r9hxgikfQhTjrs2Sk" data-pdf="certifiacte/TATA Cyber security.pdf"
+            data-img="cert_thumbs/tata_cyber_security.webp" data-verify="">
+            <div class="cert-card-inner">
+              <div class="cert-card-header">
+                <div class="cert-issuer-pill">
+                  <span class="cert-issuer-dot"></span>
+                  <span class="cert-issuer-name">Tata Group</span>
+                </div>
+                <span class="cert-tag">CYBERSECURITY</span>
+              </div>
+              <div class="cert-preview-frame">
+                <img src="cert_thumbs/tata_cyber_security.webp" alt="Tata Cybersecurity Analyst" loading="lazy" />
+                <div class="cert-preview-glass">
+                  <span class="cert-expand-hint">PREVIEW ↗</span>
+                </div>
+              </div>
+              <div class="cert-card-footer">
+                <div class="cert-card-text">
+                  <h4 class="cert-card-title">Cybersecurity Analyst</h4>
+                  <p class="cert-card-sub">Code: r9hxgikfQhTj &bull; June 2026</p>
+                </div>
+                <div class="cert-card-num">07</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 8: Tata Data Visualisation -->
+          <div class="cert-card" data-index="7" data-issuer="Tata Group (Forage)"
+            data-title="Data Visualisation: Empowering Business"
+            data-subtitle="Scenario Framing, KPI Metrics &amp; Visual Communication" data-date="June 22, 2026"
+            data-code="TATA-DATA-VIZ" data-pdf="certifiacte/tata visual.pdf" data-img="cert_thumbs/tata_visual.webp"
+            data-verify="">
+            <div class="cert-card-inner">
+              <div class="cert-card-header">
+                <div class="cert-issuer-pill">
+                  <span class="cert-issuer-dot"></span>
+                  <span class="cert-issuer-name">Tata Group</span>
+                </div>
+                <span class="cert-tag">DATA VIZ</span>
+              </div>
+              <div class="cert-preview-frame">
+                <img src="cert_thumbs/tata_visual.webp" alt="Tata Data Visualisation" loading="lazy" />
+                <div class="cert-preview-glass">
+                  <span class="cert-expand-hint">PREVIEW ↗</span>
+                </div>
+              </div>
+              <div class="cert-card-footer">
+                <div class="cert-card-text">
+                  <h4 class="cert-card-title">Data Visualisation</h4>
+                  <p class="cert-card-sub">Business Insights &bull; June 2026</p>
+                </div>
+                <div class="cert-card-num">08</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 9: Tata ESG Simulation -->
+          <div class="cert-card" data-index="8" data-issuer="Tata Group (Forage)" data-title="ESG Job Simulation"
+            data-subtitle="Environmental, Social &amp; Governance Fitment Matrices" data-date="June 24, 2026"
+            data-code="TATA-ESG" data-pdf="certifiacte/ESG TATA.pdf" data-img="cert_thumbs/esg_tata.webp"
+            data-verify="">
+            <div class="cert-card-inner">
+              <div class="cert-card-header">
+                <div class="cert-issuer-pill">
+                  <span class="cert-issuer-dot"></span>
+                  <span class="cert-issuer-name">Tata Group</span>
+                </div>
+                <span class="cert-tag">ESG STRATEGY</span>
+              </div>
+              <div class="cert-preview-frame">
+                <img src="cert_thumbs/esg_tata.webp" alt="Tata ESG Simulation" loading="lazy" />
+                <div class="cert-preview-glass">
+                  <span class="cert-expand-hint">PREVIEW ↗</span>
+                </div>
+              </div>
+              <div class="cert-card-footer">
+                <div class="cert-card-text">
+                  <h4 class="cert-card-title">ESG Simulation</h4>
+                  <p class="cert-card-sub">Sustainability &bull; June 2026</p>
+                </div>
+                <div class="cert-card-num">09</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 10: TCS iON Career Edge -->
+          <div class="cert-card" data-index="9" data-issuer="TCS iON"
+            data-title="TCS iON Career Edge - Young Professional"
+            data-subtitle="Workplace Skills, Presentation &amp; Professional Etiquette" data-date="June 2026"
+            data-code="TCS-ION-EDGE" data-pdf="certifiacte/TCS ION.pdf" data-img="cert_thumbs/tcs_ion.webp"
+            data-verify="">
+            <div class="cert-card-inner">
+              <div class="cert-card-header">
+                <div class="cert-issuer-pill">
+                  <span class="cert-issuer-dot"></span>
+                  <span class="cert-issuer-name">TCS iON</span>
+                </div>
+                <span class="cert-tag">PROFESSIONAL</span>
+              </div>
+              <div class="cert-preview-frame">
+                <img src="cert_thumbs/tcs_ion.webp" alt="TCS iON Career Edge" loading="lazy" />
+                <div class="cert-preview-glass">
+                  <span class="cert-expand-hint">PREVIEW ↗</span>
+                </div>
+              </div>
+              <div class="cert-card-footer">
+                <div class="cert-card-text">
+                  <h4 class="cert-card-title">TCS iON Career Edge</h4>
+                  <p class="cert-card-sub">Professional Growth &bull; June 2026</p>
+                </div>
+                <div class="cert-card-num">10</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 11: IEEE SB RKGIT Line Following Robot 2.0 -->
+          <div class="cert-card" data-index="10" data-issuer="IEEE SB RKGIT"
+            data-title="Line Following Robot 2.0 Competition"
+            data-subtitle="Hardware Automation &amp; Autonomous Robotics" data-date="October 18-19, 2024"
+            data-code="IEEE-RKGIT-LFR20" data-pdf="certifiacte/1731526993631.jpeg"
+            data-img="cert_thumbs/1731526993631.webp" data-verify="">
+            <div class="cert-card-inner">
+              <div class="cert-card-header">
+                <div class="cert-issuer-pill">
+                  <span class="cert-issuer-dot"></span>
+                  <span class="cert-issuer-name">IEEE SB RKGIT</span>
+                </div>
+                <span class="cert-tag">ROBOTICS</span>
+              </div>
+              <div class="cert-preview-frame">
+                <img src="cert_thumbs/1731526993631.webp" alt="IEEE SB RKGIT Line Following Robot 2.0" loading="lazy" />
+                <div class="cert-preview-glass">
+                  <span class="cert-expand-hint">PREVIEW ↗</span>
+                </div>
+              </div>
+              <div class="cert-card-footer">
+                <div class="cert-card-text">
+                  <h4 class="cert-card-title">Line Following Robot 2.0</h4>
+                  <p class="cert-card-sub">IEEE RKGIT &bull; Oct 2024</p>
+                </div>
+                <div class="cert-card-num">11</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 12: RKGIT CSSS BrainQuest -->
+          <div class="cert-card" data-index="11" data-issuer="RKGIT (CSSS)"
+            data-title="BrainQuest Technical Competition"
+            data-subtitle="Computer Science Students Society Technical Event" data-date="September 9, 2025"
+            data-code="RKGIT-CSSS-BQ" data-pdf="certifiacte/1757442879013.jpeg"
+            data-img="cert_thumbs/1757442879013.webp" data-verify="">
+            <div class="cert-card-inner">
+              <div class="cert-card-header">
+                <div class="cert-issuer-pill">
+                  <span class="cert-issuer-dot"></span>
+                  <span class="cert-issuer-name">RKGIT (CSSS)</span>
+                </div>
+                <span class="cert-tag">TECH QUIZ</span>
+              </div>
+              <div class="cert-preview-frame">
+                <img src="cert_thumbs/1757442879013.webp" alt="RKGIT CSSS BrainQuest" loading="lazy" />
+                <div class="cert-preview-glass">
+                  <span class="cert-expand-hint">PREVIEW ↗</span>
+                </div>
+              </div>
+              <div class="cert-card-footer">
+                <div class="cert-card-text">
+                  <h4 class="cert-card-title">BrainQuest Tech Competition</h4>
+                  <p class="cert-card-sub">CSSS RKGIT &bull; Sept 2025</p>
+                </div>
+                <div class="cert-card-num">12</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 13: University of Michigan Coursera Python -->
+          <div class="cert-card" data-index="12" data-issuer="Univ. of Michigan"
+            data-title="Programming for Everybody (Getting Started with Python)"
+            data-subtitle="Python Fundamentals, Data Structures &amp; Algorithmic Logic" data-date="November 20, 2025"
+            data-code="UMICH-COURSERA-PY" data-pdf="certifiacte/1764135299500.jpeg"
+            data-img="cert_thumbs/1764135299500.webp" data-verify="">
+            <div class="cert-card-inner">
+              <div class="cert-card-header">
+                <div class="cert-issuer-pill">
+                  <span class="cert-issuer-dot"></span>
+                  <span class="cert-issuer-name">Univ. of Michigan</span>
+                </div>
+                <span class="cert-tag">PYTHON</span>
+              </div>
+              <div class="cert-preview-frame">
+                <img src="cert_thumbs/1764135299500.webp" alt="University of Michigan Python Certification"
+                  loading="lazy" />
+                <div class="cert-preview-glass">
+                  <span class="cert-expand-hint">PREVIEW ↗</span>
+                </div>
+              </div>
+              <div class="cert-card-footer">
+                <div class="cert-card-text">
+                  <h4 class="cert-card-title">Programming for Everybody</h4>
+                  <p class="cert-card-sub">Coursera &bull; Nov 2025</p>
+                </div>
+                <div class="cert-card-num">13</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 14: NPTEL IIT Kharagpur Java Elite -->
+          <div class="cert-card" data-index="13" data-issuer="NPTEL (IIT KGP)"
+            data-title="Programming in Java (Elite Certification)"
+            data-subtitle="12-Week Course on Java OOP, Concurrency &amp; Data Structures (Score: 80%)"
+            data-date="Jan-Apr 2026" data-code="NPTEL26CS36S762402244" data-pdf="certifiacte/1779357193924.jpeg"
+            data-img="cert_thumbs/1779357193924.webp" data-verify="https://nptel.ac.in/noc/">
+            <div class="cert-card-inner">
+              <div class="cert-card-header">
+                <div class="cert-issuer-pill">
+                  <span class="cert-issuer-dot"></span>
+                  <span class="cert-issuer-name">NPTEL (IIT KGP)</span>
+                </div>
+                <span class="cert-tag">JAVA ELITE</span>
+              </div>
+              <div class="cert-preview-frame">
+                <img src="cert_thumbs/1779357193924.webp" alt="NPTEL Programming in Java Elite" loading="lazy" />
+                <div class="cert-preview-glass">
+                  <span class="cert-expand-hint">PREVIEW ↗</span>
+                </div>
+              </div>
+              <div class="cert-card-footer">
+                <div class="cert-card-text">
+                  <h4 class="cert-card-title">Programming in Java (Elite)</h4>
+                  <p class="cert-card-sub">IIT Kharagpur &bull; Score 80%</p>
+                </div>
+                <div class="cert-card-num">14</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 15: Fit India World Bicycle Day -->
+          <div class="cert-card" data-index="14" data-issuer="Fit India &amp; Khelo India"
+            data-title="World Bicycle Day Celebration 2026"
+            data-subtitle="Fit India Movement Nationwide Fitness Activity" data-date="June 7, 2026"
+            data-code="168192026" data-pdf="certifiacte/1781295808255.jpeg" data-img="cert_thumbs/1781295808255.webp"
+            data-verify="https://fitindia.gov.in">
+            <div class="cert-card-inner">
+              <div class="cert-card-header">
+                <div class="cert-issuer-pill">
+                  <span class="cert-issuer-dot"></span>
+                  <span class="cert-issuer-name">Fit India</span>
+                </div>
+                <span class="cert-tag">FITNESS</span>
+              </div>
+              <div class="cert-preview-frame">
+                <img src="cert_thumbs/1781295808255.webp" alt="Fit India World Bicycle Day" loading="lazy" />
+                <div class="cert-preview-glass">
+                  <span class="cert-expand-hint">PREVIEW ↗</span>
+                </div>
+              </div>
+              <div class="cert-card-footer">
+                <div class="cert-card-text">
+                  <h4 class="cert-card-title">World Bicycle Day 2026</h4>
+                  <p class="cert-card-sub">Govt of India &bull; June 2026</p>
+                </div>
+                <div class="cert-card-num">15</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 16: Fit India International Day of Yoga -->
+          <div class="cert-card" data-index="15" data-issuer="Fit India &amp; Khelo India"
+            data-title="International Day Of Yoga Celebrations 2026"
+            data-subtitle="Fit India Movement Wellness &amp; Fitness Contribution" data-date="June 21, 2026"
+            data-code="316052026" data-pdf="certifiacte/1782062666134.jpeg" data-img="cert_thumbs/1782062666134.webp"
+            data-verify="https://fitindia.gov.in">
+            <div class="cert-card-inner">
+              <div class="cert-card-header">
+                <div class="cert-issuer-pill">
+                  <span class="cert-issuer-dot"></span>
+                  <span class="cert-issuer-name">Fit India</span>
+                </div>
+                <span class="cert-tag">WELLNESS</span>
+              </div>
+              <div class="cert-preview-frame">
+                <img src="cert_thumbs/1782062666134.webp" alt="Fit India Yoga Day Celebrations" loading="lazy" />
+                <div class="cert-preview-glass">
+                  <span class="cert-expand-hint">PREVIEW ↗</span>
+                </div>
+              </div>
+              <div class="cert-card-footer">
+                <div class="cert-card-text">
+                  <h4 class="cert-card-title">Day of Yoga Celebrations</h4>
+                  <p class="cert-card-sub">Govt of India &bull; June 2026</p>
+                </div>
+                <div class="cert-card-num">16</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 17: Samsung Galaxy AI Treasure Hunt -->
+          <div class="cert-card" data-index="16" data-issuer="Samsung" data-title="Samsung Galaxy AI Treasure Hunt 2026"
+            data-subtitle="AI Treasure Hunt &amp; Mobile Intelligence Challenge" data-date="June 25, 2026"
+            data-code="SAMSUNG-AI-2026" data-pdf="certifiacte/1782495636628.jpeg"
+            data-img="cert_thumbs/1782495636628.webp" data-verify="">
+            <div class="cert-card-inner">
+              <div class="cert-card-header">
+                <div class="cert-issuer-pill">
+                  <span class="cert-issuer-dot"></span>
+                  <span class="cert-issuer-name">Samsung</span>
+                </div>
+                <span class="cert-tag">AI CHALLENGE</span>
+              </div>
+              <div class="cert-preview-frame">
+                <img src="cert_thumbs/1782495636628.webp" alt="Samsung Galaxy AI Treasure Hunt" loading="lazy" />
+                <div class="cert-preview-glass">
+                  <span class="cert-expand-hint">PREVIEW ↗</span>
+                </div>
+              </div>
+              <div class="cert-card-footer">
+                <div class="cert-card-text">
+                  <h4 class="cert-card-title">Galaxy AI Treasure Hunt</h4>
+                  <p class="cert-card-sub">Samsung RKGIT &bull; June 2026</p>
+                </div>
+                <div class="cert-card-num">17</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 18: IEEE WIE RKGIT Google Prompt Wars -->
+          <div class="cert-card" data-index="17" data-issuer="IEEE WIE &amp; Google"
+            data-title="Google Prompt Wars Competition"
+            data-subtitle="Build with AI &amp; Prompt Engineering Competition" data-date="July 2026"
+            data-code="IEEE-WIE-PROMPTWARS" data-pdf="certifiacte/1789219197299.jpeg"
+            data-img="cert_thumbs/1789219197299.webp" data-verify="">
+            <div class="cert-card-inner">
+              <div class="cert-card-header">
+                <div class="cert-issuer-pill">
+                  <span class="cert-issuer-dot"></span>
+                  <span class="cert-issuer-name">IEEE WIE</span>
+                </div>
+                <span class="cert-tag">PROMPT AI</span>
+              </div>
+              <div class="cert-preview-frame">
+                <img src="cert_thumbs/1789219197299.webp" alt="Google Prompt Wars Competition" loading="lazy" />
+                <div class="cert-preview-glass">
+                  <span class="cert-expand-hint">PREVIEW ↗</span>
+                </div>
+              </div>
+              <div class="cert-card-footer">
+                <div class="cert-card-text">
+                  <h4 class="cert-card-title">Google Prompt Wars</h4>
+                  <p class="cert-card-sub">IEEE SB RKGIT &bull; 2026</p>
+                </div>
+                <div class="cert-card-num">18</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 19: Kaggle & Google 5-Day AI Agents -->
+          <div class="cert-card" data-index="18" data-issuer="Kaggle &amp; Google"
+            data-title="5-Day AI Agents: Intensive Vibe Coding Course"
+            data-subtitle="Autonomous AI Agents, Multi-Agent Workflows &amp; Vibe Coding" data-date="July 30, 2026"
+            data-code="KAGGLE-GOOGLE-AGENTS" data-pdf="certifiacte/1789620699418.jpeg"
+            data-img="cert_thumbs/1789620699418.webp" data-verify="https://www.kaggle.com">
+            <div class="cert-card-inner">
+              <div class="cert-card-header">
+                <div class="cert-issuer-pill">
+                  <span class="cert-issuer-dot"></span>
+                  <span class="cert-issuer-name">Kaggle &amp; Google</span>
+                </div>
+                <span class="cert-tag">AI AGENTS</span>
+              </div>
+              <div class="cert-preview-frame">
+                <img src="cert_thumbs/1789620699418.webp" alt="Kaggle 5-Day AI Agents Course" loading="lazy" />
+                <div class="cert-preview-glass">
+                  <span class="cert-expand-hint">PREVIEW ↗</span>
+                </div>
+              </div>
+              <div class="cert-card-footer">
+                <div class="cert-card-text">
+                  <h4 class="cert-card-title">5-Day AI Agents Course</h4>
+                  <p class="cert-card-sub">Kaggle Badge &bull; July 2026</p>
+                </div>
+                <div class="cert-card-num">19</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 20: Paytm AI Hackathon -->
+          <div class="cert-card" data-index="19" data-issuer="Paytm"
+            data-title="Paytm AI Hackathon Certificate of Participation"
+            data-subtitle="AI &amp; Machine Learning Problem Solving Competition" data-date="2026"
+            data-code="PAYTM-AI-HACK" data-pdf="certifiacte/1790187400124.jpeg"
+            data-img="cert_thumbs/1790187400124.webp" data-verify="">
+            <div class="cert-card-inner">
+              <div class="cert-card-header">
+                <div class="cert-issuer-pill">
+                  <span class="cert-issuer-dot"></span>
+                  <span class="cert-issuer-name">Paytm</span>
+                </div>
+                <span class="cert-tag">PAYTM AI</span>
+              </div>
+              <div class="cert-preview-frame">
+                <img src="cert_thumbs/1790187400124.webp" alt="Paytm AI Hackathon Participation" loading="lazy" />
+                <div class="cert-preview-glass">
+                  <span class="cert-expand-hint">PREVIEW ↗</span>
+                </div>
+              </div>
+              <div class="cert-card-footer">
+                <div class="cert-card-text">
+                  <h4 class="cert-card-title">Paytm AI Hackathon</h4>
+                  <p class="cert-card-sub">Paytm Intelligence &bull; 2026</p>
+                </div>
+                <div class="cert-card-num">20</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 21: The Binary Club College Hackathon Appreciation -->
+          <div class="cert-card" data-index="20" data-issuer="The Binary Club (RKGIT)"
+            data-title="College Hackathon Certificate of Appreciation"
+            data-subtitle="Binary Hack Coordinator &amp; Event Organizer" data-date="September 22-24, 2025"
+            data-code="BINARY-HACK-APPR" data-pdf="certifiacte/1790700942269.jpeg"
+            data-img="cert_thumbs/1790700942269.webp" data-verify="">
+            <div class="cert-card-inner">
+              <div class="cert-card-header">
+                <div class="cert-issuer-pill">
+                  <span class="cert-issuer-dot"></span>
+                  <span class="cert-issuer-name">The Binary Club</span>
+                </div>
+                <span class="cert-tag">ORGANIZER</span>
+              </div>
+              <div class="cert-preview-frame">
+                <img src="cert_thumbs/1790700942269.webp" alt="The Binary Club College Hackathon Appreciation"
+                  loading="lazy" />
+                <div class="cert-preview-glass">
+                  <span class="cert-expand-hint">PREVIEW ↗</span>
+                </div>
+              </div>
+              <div class="cert-card-footer">
+                <div class="cert-card-text">
+                  <h4 class="cert-card-title">Binary Hack Appreciation</h4>
+                  <p class="cert-card-sub">Binary Hack &bull; Sept 2025</p>
+                </div>
+                <div class="cert-card-num">21</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 22: The Binary Club Certificate of Recognition -->
+          <div class="cert-card" data-index="21" data-issuer="The Binary Club (RKGIT)"
+            data-title="The Binary Club Certificate of Recognition"
+            data-subtitle="Technical Contributor &amp; Recruitment Coordinator" data-date="2025"
+            data-code="BINARY-CLUB-RECOG" data-pdf="certifiacte/1789875390305.jpeg"
+            data-img="cert_thumbs/1789875390305.webp" data-verify="">
+            <div class="cert-card-inner">
+              <div class="cert-card-header">
+                <div class="cert-issuer-pill">
+                  <span class="cert-issuer-dot"></span>
+                  <span class="cert-issuer-name">The Binary Club</span>
+                </div>
+                <span class="cert-tag">LEADERSHIP</span>
+              </div>
+              <div class="cert-preview-frame">
+                <img src="cert_thumbs/1789875390305.webp" alt="The Binary Club Certificate of Recognition"
+                  loading="lazy" />
+                <div class="cert-preview-glass">
+                  <span class="cert-expand-hint">PREVIEW ↗</span>
+                </div>
+              </div>
+              <div class="cert-card-footer">
+                <div class="cert-card-text">
+                  <h4 class="cert-card-title">Binary Club Recognition</h4>
+                  <p class="cert-card-sub">RKGIT &bull; 2025</p>
+                </div>
+                <div class="cert-card-num">22</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Bottom High-Impact Action Pill Button -->
+      <div class="cert-actions-wrapper">
+        <button id="cert-main-cta-btn" class="cert-neon-pill-btn" type="button">
+          <span class="cert-btn-label">View Certificate</span>
+        </button>
+
+        <!-- Subtle Controls: Arrows & Counter Track -->
+        <div class="cert-slider-controls">
+          <button id="cert-prev-btn" class="cert-control-arrow" aria-label="Previous Certificate">&larr;</button>
+          <div class="cert-counter-track">
+            <span id="cert-active-num" class="cert-counter-current">01</span>
+            <span class="cert-counter-sep">/</span>
+            <span class="cert-counter-total">22</span>
+          </div>
+          <button id="cert-next-btn" class="cert-control-arrow" aria-label="Next Certificate">&rarr;</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3-COLUMNS SECTION: EDUCATION & SKILLS | WORK PROCESS | PHILOSOPHY (Exact Reference Match) -->
+    <section id="education-skills" class="section three-col-section">
+      <div class="three-col-grid">
+
+        <!-- Column 1: Education & Skills -->
+        <div class="col-education-skills">
+          <div class="col-block">
+            <h2 class="col-header-title">EDUCATION</h2>
+
+            <div class="edu-card">
+              <div class="edu-top">
+                <h3 class="edu-degree">B.Tech in Computer Science &amp; Eng.</h3>
+                <span class="edu-date">2024 &ndash; 2028</span>
+              </div>
+              <div class="edu-place">Raj Kumar Goel Institute of Technology</div>
+              <div class="edu-inst">Ghaziabad, Uttar Pradesh</div>
+              <p class="edu-note">Undergraduate engineering studies focusing on Data Structures &amp; Algorithms,
+                Full-Stack technologies, DBMS, and Automation.</p>
+            </div>
+
+            <div class="edu-card">
+              <div class="edu-top">
+                <h3 class="edu-degree">High School &amp; Senior Secondary</h3>
+                <span class="edu-date">May 2016 &ndash; Mar 2023</span>
+              </div>
+              <div class="edu-place">Rajkiya Pratibha Vikas Vidyalaya</div>
+              <div class="edu-inst">Surajmal Vihar, Delhi</div>
+              <p class="edu-note">Foundational education with coursework in Python, MySQL, mathematics, and computer
+                science fundamentals.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Column 2: Work Process (Timeline matching reference) -->
+        <div id="work-process" class="col-work-process">
+          <h2 class="col-header-title">WORK PROCESS</h2>
+
+          <div class="process-timeline">
+            <!-- Step 1 -->
+            <div class="process-step">
+              <div class="step-marker">
+                <span class="step-num">01</span>
+                <span class="step-icon">🔍</span>
+              </div>
+              <div class="step-content">
+                <h3 class="step-title">DISCOVER &amp; ANALYZE</h3>
+                <p class="step-desc">Understanding real-world problems, deconstructing constraints, and analyzing user
+                  workflows and edge cases.</p>
+              </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="process-step">
+              <div class="step-marker">
+                <span class="step-num">02</span>
+                <span class="step-icon">💡</span>
+              </div>
+              <div class="step-content">
+                <h3 class="step-title">ARCHITECT &amp; PLAN</h3>
+                <p class="step-desc">Designing database schemas in SQL / MongoDB / Supabase, selecting optimal data
+                  structures &amp; algorithms, and planning full-stack architecture.</p>
+              </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="process-step">
+              <div class="step-marker">
+                <span class="step-num">03</span>
+                <span class="step-icon">📐</span>
+              </div>
+              <div class="step-content">
+                <h3 class="step-title">FULL-STACK BUILD</h3>
+                <p class="step-desc">Building responsive interfaces in React.js and engineering resilient backend logic
+                  using Node.js, Express, Python, or Java.</p>
+              </div>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="process-step">
+              <div class="step-marker">
+                <span class="step-num">04</span>
+                <span class="step-icon">&lt;/&gt;</span>
+              </div>
+              <div class="step-content">
+                <h3 class="step-title">AUTOMATE &amp; INTEGRATE</h3>
+                <p class="step-desc">Developing clean REST APIs, automating manual tasks, and integrating database &amp;
+                  backend services for smooth workflows.</p>
+              </div>
+            </div>
+
+            <!-- Step 5 -->
+            <div class="process-step">
+              <div class="step-marker">
+                <span class="step-num">05</span>
+                <span class="step-icon">🚀</span>
+              </div>
+              <div class="step-content">
+                <h3 class="step-title">DEPLOY &amp; REFINE</h3>
+                <p class="step-desc">Deploying to Vercel, monitoring application performance, learning from feedback,
+                  and continually improving through practice.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Column 3: Philosophy / Quote Card (Crimson Red Card matching reference) -->
+        <div class="col-philosophy">
+          <div class="philosophy-card">
+            <div class="quote-mark">&ldquo;</div>
+            <p class="philosophy-quote">
+              I am a curious and consistent learner who believes in building projects, learning from feedback and
+              improving through practice. I enjoy turning ideas into working products that simplify complex tasks.
+            </p>
+            <div class="signature-wrap">
+              <div class="signature-text">Shivam Gupta</div>
+            </div>
+            <div class="philosophy-cta-note">
+              <span>CONTINUOUS LEARNER &middot; IMPACT DRIVEN</span>
+              <span class="philosophy-sparkle">✦</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- LEADERSHIP & RECOGNITION SECTION (FUTURISTIC BENTO GRID) -->
+    <section id="leadership" class="section leadership-section">
+      <!-- Ambient Background Glow -->
+      <div class="bento-bg-glow" aria-hidden="true"></div>
+
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <span class="red-bullet"></span>
+          <h2 class="section-title">LEADERSHIP &amp; HONORS</h2>
+        </div>
+        <div class="bento-header-badge">
+          <span class="badge-dot"></span>
+          <span>ACHIEVEMENTS &amp; IMPACT</span>
+        </div>
+      </div>
+
+      <!-- Asymmetric Bento Grid Container -->
+      <div class="bento-grid">
+
+        <!-- CARD 1: FEATURED ACHIEVEMENT HERO (Paytm Hackathon Top 5 Finalist) -->
+        <div class="bento-card bento-hero bento-reveal" data-delay="0">
+          <div class="bento-card-bg"></div>
+          <div class="bento-hero-glow"></div>
+
+          <div class="bento-card-header">
+            <div class="bento-pill hero-pill">
+              <span class="bento-pill-dot"></span>
+              <span>FEATURED HONORS</span>
+            </div>
+            <span class="bento-card-num">01</span>
+          </div>
+
+          <div class="bento-hero-content">
+            <div class="bento-hero-badge-wrap">
+              <div class="bento-trophy-emblem">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" />
+                  <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" />
+                  <path d="M4 22h16" />
+                  <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22" />
+                  <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22" />
+                  <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z" />
+                </svg>
+              </div>
+              <div class="bento-event-tag">PAYTM HACKATHON</div>
+            </div>
+
+            <div class="bento-hero-titles">
+              <h3 class="bento-hero-bigtitle">TOP 5 FINALIST</h3>
+              <p class="bento-hero-subtitle">Paytm Merchant Intelligence Hackathon</p>
+            </div>
+
+            <div class="bento-metric-banner">
+              <div class="bento-metric-val">2,850+</div>
+              <div class="bento-metric-info">
+                <span class="bento-metric-label">TOTAL PARTICIPANTS</span>
+                <span class="bento-metric-sub">Nationwide Hackathon Competitors</span>
+              </div>
+            </div>
+
+            <p class="bento-card-desc">
+              Recognized among the Top 5 Finalists out of 2,850+ participants for rapid prototyping, backend logic,
+              Cognee Knowledge Graph episodic memory, and POS billing APIs under strict deadlines.
+            </p>
+
+            <div class="bento-tags-row">
+              <span class="bento-tech-chip">Next.js 14</span>
+              <span class="bento-tech-chip">Spring Boot</span>
+              <span class="bento-tech-chip">FastAPI</span>
+              <span class="bento-tech-chip">Cognee AI</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 2: SIH 2026 CARD (Smart India Hackathon Contributor) -->
+        <div class="bento-card bento-sih bento-reveal" data-delay="100">
+          <div class="bento-card-bg"></div>
+
+          <div class="bento-card-header">
+            <div class="bento-pill sih-pill">
+              <span class="bento-pill-icon">🎯</span>
+              <span>NATIONAL HACKATHON</span>
+            </div>
+            <span class="bento-card-num">02</span>
+          </div>
+
+          <div class="bento-card-body">
+            <div class="bento-sih-badge">
+              <span class="sih-year">SIH '26</span>
+              <span class="sih-shortlist">INTERNAL SHORTLIST</span>
+            </div>
+
+            <h3 class="bento-card-title">Smart India Hackathon (SIH) 2026</h3>
+            <div class="bento-card-sub">Team Hactivators &mdash; SmritiCare AI</div>
+
+            <p class="bento-card-desc">
+              Shortlisted in the Internal Hackathon for SIH 2026 with <strong>Team Hactivators</strong>. Developed
+              <strong>SmritiCare AI</strong>, an AI-powered solution built to create meaningful impact across research,
+              ideation, development, PPT preparation, and presentation.
+            </p>
+
+            <div class="bento-card-foot">
+              <span class="bento-foot-badge">Internal Hackathon Milestone</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 3: TECHNICAL HIGHLIGHT CARD (Full-Stack & Automation) -->
+        <div class="bento-card bento-tech bento-reveal" data-delay="200">
+          <div class="bento-card-bg"></div>
+
+          <div class="bento-card-header">
+            <div class="bento-pill tech-pill">
+              <svg class="bento-pill-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="16 18 22 12 16 6" />
+                <polyline points="8 6 2 12 8 18" />
+              </svg>
+              <span>CORE CAPABILITIES</span>
+            </div>
+            <span class="bento-card-num">03</span>
+          </div>
+
+          <div class="bento-card-body">
+            <h3 class="bento-card-title">Full-Stack &amp; Automation</h3>
+            <div class="bento-card-sub">Engineering &amp; Cloud Infrastructure</div>
+
+            <p class="bento-card-desc">
+              Strengthened practical capabilities in building responsive interfaces, backend APIs, and intelligent
+              automation applications.
+            </p>
+
+            <div class="bento-stack-grid">
+              <div class="bento-stack-item">
+                <span class="stack-dot"></span>
+                <span>MERN Stack</span>
+              </div>
+              <div class="bento-stack-item">
+                <span class="stack-dot"></span>
+                <span>Supabase</span>
+              </div>
+              <div class="bento-stack-item">
+                <span class="stack-dot"></span>
+                <span>Vercel</span>
+              </div>
+              <div class="bento-stack-item">
+                <span class="stack-dot"></span>
+                <span>Python Automation</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 4: LEADERSHIP CARD (The Binary Club) -->
+        <div class="bento-card bento-leadership bento-reveal" data-delay="300">
+          <div class="bento-card-bg"></div>
+
+          <div class="bento-card-header">
+            <div class="bento-pill lead-pill">
+              <svg class="bento-pill-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M23 21v-2a4 4 0 0 3-3.87" />
+                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+              </svg>
+              <span>CAMPUS LEADERSHIP</span>
+            </div>
+            <span class="bento-time-badge">2025 &mdash; PRESENT</span>
+          </div>
+
+          <div class="bento-card-body">
+            <div class="bento-lead-top">
+              <div>
+                <h3 class="bento-card-title">Binary Hack Coordinator &amp; Recruitment Coordinator</h3>
+                <div class="bento-card-sub">THE BINARY CLUB &bull; Raj Kumar Goel Institute of Technology</div>
+              </div>
+            </div>
+
+            <div class="bento-lead-bullets">
+              <div class="bento-bullet-item">
+                <span class="bullet-arrow">▸</span>
+                <span>Served as Binary Hack Coordinator and Recruitment Coordinator, spearheading member intake, coding
+                  hackathons &amp; portal development.</span>
+              </div>
+              <div class="bento-bullet-item">
+                <span class="bullet-arrow">▸</span>
+                <span>Conducted interactive technical sessions and peer coding circles on Python, C, DBMS, and
+                  full-stack development.</span>
+              </div>
+              <div class="bento-bullet-item">
+                <span class="bullet-arrow">▸</span>
+                <span>Mentored junior students on Data Structures &amp; Algorithms, curated practice problems, and
+                  cultivated project building.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 5: SMALL STATS / HIGHLIGHT TILES CARD -->
+        <div class="bento-card bento-stats bento-reveal" data-delay="400">
+          <div class="bento-card-bg"></div>
+
+          <div class="bento-stats-inner">
+            <div class="bento-stat-tile">
+              <div class="stat-number-hero">TOP 5</div>
+              <div class="stat-label-hero">PAYTM FINALIST</div>
+            </div>
+
+            <div class="bento-stat-divider"></div>
+
+            <div class="bento-stat-tile">
+              <div class="stat-number-sub">2,850+</div>
+              <div class="stat-label-sub">PARTICIPANTS</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- LET'S WORK TOGETHER / CONTACT SECTION (Exact Reference Match) -->
+    <section id="contact" class="section contact-section">
+      <div class="contact-container">
+
+        <!-- Left: Call to action -->
+        <div class="contact-left">
+          <div class="contact-header-wrap">
+            <h2 class="contact-title">
+              <span class="contact-title-line">LET'S WORK</span>
+              <span class="contact-title-line">TOGETHER</span>
+            </h2>
+            <span class="contact-sparkle">✦</span>
+          </div>
+          <p class="contact-subtext">
+            I am currently seeking opportunities for software development internships, full-stack development roles,
+            backend projects and automation-focused opportunities where I can contribute, grow and work with experienced
+            teams.
+          </p>
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=joinwithshivam@gmail.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary contact-cta-pill">
+            <span class="btn-arrow">&rarr;</span>
+            <span>AVAILABLE FOR INTERNSHIPS</span>
+          </a>
+        </div>
+
+        <!-- Middle: Contact Info Channels -->
+        <div class="contact-middle">
+          <ul class="contact-channels">
+            <li class="channel-item">
+              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=joinwithshivam@gmail.com" target="_blank" rel="noopener noreferrer" class="channel-link">
+                <span class="channel-icon">✉</span>
+                <span class="channel-text">joinwithshivam@gmail.com</span>
+              </a>
+            </li>
+            <li class="channel-item">
+              <a href="https://github.com/webdev-shiv" target="_blank" rel="noopener noreferrer" class="channel-link">
+                <span class="channel-icon">💻</span>
+                <span class="channel-text">github.com/webdev-shiv</span>
+              </a>
+            </li>
+            <li class="channel-item">
+              <a href="https://linkedin.com/in/shivam-gupta44" target="_blank" rel="noopener noreferrer"
+                class="channel-link">
+                <span class="channel-icon">🔗</span>
+                <span class="channel-text">linkedin.com/in/shivam-gupta44</span>
+              </a>
+            </li>
+            <li class="channel-item">
+              <a href="tel:+918860442240" class="channel-link">
+                <span class="channel-icon">📞</span>
+                <span class="channel-text">+91-8860442240</span>
+              </a>
+            </li>
+            <li class="channel-item">
+              <div class="channel-link non-clickable">
+                <span class="channel-icon">📍</span>
+                <span class="channel-text">Delhi, India</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Right: Interactive Developer Console Card matching laptop preview -->
+        <div class="contact-right">
+          <div class="dev-terminal-card">
+            <div class="terminal-bar">
+              <span class="mock-dot dot-red"></span>
+              <span class="mock-dot dot-yellow"></span>
+              <span class="mock-dot dot-green"></span>
+              <span class="terminal-title">shivam@terminal:~</span>
+            </div>
+            <div class="terminal-body">
+              <p class="term-line"><span class="term-prompt">$</span> <span class="term-cmd">shivam --profile</span></p>
+              <p class="term-output">&gt; Name: Shivam Gupta</p>
+              <p class="term-output">&gt; Institution: RKGIT, Ghaziabad (B.Tech CSE)</p>
+              <p class="term-output">&gt; Focus: Full-Stack (MERN) &bull; Backend &bull; Automation</p>
+              <p class="term-output">&gt; Skills: Python, Java, C, DSA, React, Node, Express, MongoDB, Supabase</p>
+              <p class="term-output">&gt; Hackathons: Paytm Hackathon (Top 5) &bull; SIH 2026 Internal Shortlist (Team
+                Hactivators)</p>
+              <p class="term-line"><span class="term-prompt">$</span> <span class="term-cmd">shivam --hire</span></p>
+              <p class="term-output term-success">&gt; Status: Open for Software Development &amp; Full-Stack
+                Internships!</p>
+              <p class="term-line"><span class="term-prompt">$</span> <span class="term-cursor">_</span></p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Footer Bar -->
+      <footer class="footer-bar">
+        <div class="footer-copy">
+          &copy; 2026 Shivam Gupta. All rights reserved. CSE &bull; RKGIT
+        </div>
+        <div class="footer-back-top">
+          <a href="#hero" class="back-to-top-link">
+            <span>BACK TO TOP</span>
+            <span>&uarr;</span>
+          </a>
+        </div>
+      </footer>
+    </section>
+
+  </main>
+
+  <!-- =========================================================================
+       CERTIFICATE LIGHTBOX MODAL DIALOG
+       ========================================================================= -->
+  <div id="cert-modal" class="cert-modal" aria-hidden="true" role="dialog" aria-labelledby="cert-modal-title">
+    <div class="cert-modal-backdrop" id="cert-modal-backdrop"></div>
+    <div class="cert-modal-dialog">
+      <button class="cert-modal-close" id="cert-modal-close" aria-label="Close modal">&times;</button>
+
+      <div class="cert-modal-body">
+        <div class="cert-modal-image-col">
+          <div class="cert-modal-img-frame">
+            <img id="cert-modal-img" src="" alt="Certificate Preview" />
+          </div>
+        </div>
+
+        <div class="cert-modal-info-col">
+          <div class="cert-modal-badge" id="cert-modal-issuer-badge">GOOGLE CLOUD</div>
+          <h3 class="cert-modal-title" id="cert-modal-title">Certificate Title</h3>
+          <p class="cert-modal-subtitle" id="cert-modal-subtitle">Credential Subtitle</p>
+
+          <div class="cert-modal-meta-grid">
+            <div class="cert-modal-meta-item">
+              <span class="cert-meta-label">ISSUER</span>
+              <span class="cert-meta-val" id="cert-modal-issuer">Google Cloud</span>
+            </div>
+            <div class="cert-modal-meta-item">
+              <span class="cert-meta-label">ISSUE DATE</span>
+              <span class="cert-meta-val" id="cert-modal-date">June 2026</span>
+            </div>
+            <div class="cert-modal-meta-item full-width" id="cert-modal-code-row">
+              <span class="cert-meta-label">CREDENTIAL / VERIFY CODE</span>
+              <div class="cert-code-copy-wrap">
+                <span class="cert-meta-val code-val" id="cert-modal-code">10366423</span>
+                <button class="cert-copy-btn" id="cert-modal-copy-btn" type="button" title="Copy Code">COPY</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="cert-modal-actions">
+            <a id="cert-modal-pdf-link" href="#" target="_blank" rel="noopener noreferrer"
+              class="btn btn-primary cert-modal-btn-pdf">
+              <span>OPEN ORIGINAL PDF</span>
+              <span class="btn-arrow">&nearr;</span>
+            </a>
+            <a id="cert-modal-verify-link" href="#" target="_blank" rel="noopener noreferrer"
+              class="btn btn-outline cert-modal-btn-verify" style="display:none;">
+              <span>VERIFY ONLINE</span>
+              <span class="btn-arrow">&nearr;</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
