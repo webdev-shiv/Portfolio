@@ -3125,23 +3125,193 @@ body {
 }
 
 @media (max-width: 640px) {
+  html, body {
+    overflow-x: hidden;
+  }
+
+  .navbar {
+    padding: 0 16px;
+    height: 60px;
+  }
+  .nav-role {
+    font-size: 9.5px;
+    letter-spacing: 1px;
+  }
+  .nav-name {
+    font-size: 13px;
+  }
+  .nav-cta-btn {
+    padding: 7px 12px;
+    font-size: 10.5px;
+    white-space: nowrap;
+  }
+
+  .hero-section {
+    padding: 75px 16px 36px;
+  }
+  .hero-watermark {
+    font-size: clamp(38px, 11vw, 75px);
+    top: 25px;
+    opacity: 0.16;
+    letter-spacing: 0.04em;
+    text-shadow: 0 0 25px rgba(229, 9, 20, 0.25);
+  }
+  .hero-intro-script {
+    font-size: 26px;
+  }
+  .hero-name {
+    font-size: clamp(34px, 10vw, 52px);
+    line-height: 1.0;
+    margin-bottom: 10px;
+  }
+  .hero-subtitle {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    line-height: 1.4;
+    margin-bottom: 12px;
+  }
+  .hero-summary {
+    font-size: 13.5px;
+    line-height: 1.6;
+    margin-bottom: 18px;
+    color: #CBD5E1;
+  }
+  .hero-badge {
+    white-space: normal;
+    line-height: 1.45;
+    max-width: 100%;
+    padding: 12px 14px;
+    font-size: 11.5px;
+    margin-bottom: 18px;
+  }
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+  .btn-hero-primary, .btn-hero-secondary {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    padding: 13px 18px;
+    font-size: 12.5px;
+  }
+  .hero-right {
+    width: 100%;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .hero-quote-card {
+    max-width: 100%;
+    width: 100%;
+    padding: 14px 16px;
+    margin-top: 10px;
+  }
+  .hero-stats-stack {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 100%;
+    gap: 16px;
+    margin-top: 10px;
+  }
+  .stat-item {
+    align-items: flex-start;
+    text-align: left;
+  }
+  .stat-number {
+    font-size: 30px;
+  }
+  .stat-label {
+    font-size: 10px;
+    letter-spacing: 1.2px;
+  }
+
   .bento-grid {
     grid-template-columns: 1fr;
     gap: 16px;
   }
   .bento-hero, .bento-leadership, .bento-sih, .bento-tech, .bento-stats {
     grid-column: span 1;
-  }
-  .bento-hero {
-    padding: 22px;
+    padding: 20px;
   }
   .bento-hero-bigtitle {
-    font-size: 34px;
+    font-size: 26px;
+    line-height: 1.2;
   }
   .bento-metric-banner {
     flex-direction: column;
     align-items: flex-start;
     gap: 8px;
+  }
+
+  .contact-container {
+    padding: 24px 16px;
+    gap: 24px;
+  }
+  .contact-title {
+    font-size: clamp(28px, 7vw, 42px);
+  }
+  .dev-terminal-card {
+    border-radius: 12px;
+  }
+  .terminal-body {
+    padding: 14px;
+    font-size: 11.5px;
+  }
+  .contact-card {
+    padding: 12px 16px;
+    font-size: 12.5px;
+  }
+
+  .footer-bar {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+    padding: 24px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-watermark {
+    font-size: clamp(30px, 10vw, 55px);
+    top: 20px;
+    opacity: 0.12;
+  }
+  .hero-intro-script {
+    font-size: 22px;
+  }
+  .hero-name {
+    font-size: 36px;
+  }
+  .hero-subtitle {
+    font-size: 10px;
+    letter-spacing: 1px;
+  }
+  .hero-summary {
+    font-size: 13px;
+  }
+  .cert-stage-wrapper {
+    height: 400px;
+    perspective: 750px;
+  }
+  .cert-card {
+    width: 195px;
+    height: 320px;
+    border-radius: 16px;
+  }
+  .cert-preview-frame {
+    height: 115px;
+  }
+  .cert-card-title {
+    font-size: 0.85rem;
+  }
+  .cert-neon-pill-btn {
+    padding: 14px 20px;
+    font-size: 0.88rem;
+    width: 100%;
+    text-align: center;
   }
 }
 
