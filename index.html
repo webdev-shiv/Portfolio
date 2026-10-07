@@ -101,8 +101,49 @@
     </nav>
     <div class="nav-right">
       <a href="#contact" class="nav-cta-btn">GET IN TOUCH</a>
+      <button id="mobile-menu-toggle" class="mobile-menu-toggle" type="button" aria-label="Toggle navigation menu"
+        aria-expanded="false" aria-controls="mobile-nav-drawer">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
     </div>
   </header>
+
+  <!-- Mobile Navigation Drawer Overlay -->
+  <div id="mobile-nav-drawer" class="mobile-nav-drawer" aria-hidden="true" role="dialog"
+    aria-label="Mobile Navigation Menu">
+    <div class="mobile-nav-backdrop" id="mobile-nav-backdrop"></div>
+    <div class="mobile-nav-content">
+      <div class="mobile-nav-header">
+        <div class="nav-title-group">
+          <span class="nav-role">CSE &amp; FULL-STACK DEVELOPER</span>
+          <span class="nav-name">SHIVAM GUPTA</span>
+        </div>
+        <button id="mobile-nav-close" class="mobile-nav-close" type="button"
+          aria-label="Close navigation menu">&times;</button>
+      </div>
+      <nav class="mobile-nav-links">
+        <a href="#hero" class="mobile-nav-link active"><span>01</span> OVERVIEW</a>
+        <a href="#projects" class="mobile-nav-link"><span>02</span> PROJECTS</a>
+        <a href="#technical-skills" class="mobile-nav-link"><span>03</span> SKILLS</a>
+        <a href="#certifications" class="mobile-nav-link"><span>04</span> CERTIFICATIONS</a>
+        <a href="#education-skills" class="mobile-nav-link"><span>05</span> EDUCATION</a>
+        <a href="#leadership" class="mobile-nav-link"><span>06</span> LEADERSHIP</a>
+        <a href="#contact" class="mobile-nav-link"><span>07</span> CONTACT</a>
+      </nav>
+      <div class="mobile-nav-footer">
+        <a href="#contact" class="btn btn-primary mobile-nav-cta">GET IN TOUCH &rarr;</a>
+        <div class="mobile-social-pills">
+          <a href="https://github.com/webdev-shiv" target="_blank" rel="noopener noreferrer"
+            class="social-pill">GitHub</a>
+          <a href="https://linkedin.com/in/shivam-gupta44" target="_blank" rel="noopener noreferrer"
+            class="social-pill">LinkedIn</a>
+          <a href="mailto:joinwithshivam@gmail.com" class="social-pill">Email</a>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Interactive Content Wrapper overlaid on the Scroll Animation -->
   <main id="page-wrapper">
@@ -1674,11 +1715,9 @@
           </div>
 
           <!-- Card 21: The Binary Club College Hackathon Appreciation -->
-          <div class="cert-card" data-index="20" data-issuer="The Binary Club (RKGIT)"
-            data-title="College Hackathon Certificate of Appreciation"
-            data-subtitle="Binary Hack Coordinator &amp; Event Organizer" data-date="September 22-24, 2025"
-            data-code="BINARY-HACK-APPR" data-pdf="certifiacte/1790700942269.jpeg"
-            data-img="cert_thumbs/1790700942269.webp" data-verify="">
+          <div class="cert-card" data-index="20" data-issuer="RKGIT" data-title="SIH Internal Hackathon Winner"
+            data-subtitle="zr &amp; Event Organizer" data-date="September 22-24, 2025" data-code="BINARY-HACK-APPR"
+            data-pdf="certifiacte/1790700942269.jpeg" data-img="cert_thumbs/1790700942269.webp" data-verify="">
             <div class="cert-card-inner">
               <div class="cert-card-header">
                 <div class="cert-issuer-pill">
@@ -1704,30 +1743,27 @@
             </div>
           </div>
 
-          <!-- Card 22: The Binary Club Certificate of Recognition -->
-          <div class="cert-card" data-index="21" data-issuer="The Binary Club (RKGIT)"
-            data-title="The Binary Club Certificate of Recognition"
-            data-subtitle="Technical Contributor &amp; Recruitment Coordinator" data-date="2025"
-            data-code="BINARY-CLUB-RECOG" data-pdf="certifiacte/1789875390305.jpeg"
-            data-img="cert_thumbs/1789875390305.webp" data-verify="">
+          <!-- Card 22: SIH Internal Hackathon Winner -->
+          <div class="cert-card" data-index="21" data-issuer="RKGIT" data-title="SIH Internal Hackathon Winner"
+            data-subtitle="Winner" data-date="2025" data-code="BINARY-CLUB-RECOG"
+            data-pdf="certifiacte/1789875390305.jpeg" data-img="cert_thumbs/1789875390305.webp" data-verify="">
             <div class="cert-card-inner">
               <div class="cert-card-header">
                 <div class="cert-issuer-pill">
                   <span class="cert-issuer-dot"></span>
-                  <span class="cert-issuer-name">The Binary Club</span>
+                  <span class="cert-issuer-name">RKGIT</span>
                 </div>
-                <span class="cert-tag">LEADERSHIP</span>
+                <span class="cert-tag">SIH</span>
               </div>
               <div class="cert-preview-frame">
-                <img src="cert_thumbs/1789875390305.webp" alt="The Binary Club Certificate of Recognition"
-                  loading="lazy" />
+                <img src="cert_thumbs/1789875390305.webp" alt="SIH Internal Hackathon Winner" loading="lazy" />
                 <div class="cert-preview-glass">
                   <span class="cert-expand-hint">PREVIEW ↗</span>
                 </div>
               </div>
               <div class="cert-card-footer">
                 <div class="cert-card-text">
-                  <h4 class="cert-card-title">Binary Club Recognition</h4>
+                  <h4 class="cert-card-title">SIH Internal Hackathon Winner</h4>
                   <p class="cert-card-sub">RKGIT &bull; 2025</p>
                 </div>
                 <div class="cert-card-num">22</div>
@@ -2112,8 +2148,8 @@
         <div class="contact-left">
           <div class="contact-header-wrap">
             <h2 class="contact-title">
-              <span class="contact-title-line">LET'S WORK</span>
-              <span class="contact-title-line">TOGETHER</span>
+              <span class="contact-title-line">LET'S TURN IDEAS</span>
+              <span class="contact-title-line">INTO REALITY</span>
             </h2>
             <span class="contact-sparkle">✦</span>
           </div>
@@ -2122,7 +2158,8 @@
             backend projects and automation-focused opportunities where I can contribute, grow and work with experienced
             teams.
           </p>
-          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=joinwithshivam@gmail.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary contact-cta-pill">
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=joinwithshivam@gmail.com" target="_blank"
+            rel="noopener noreferrer" class="btn btn-primary contact-cta-pill">
             <span class="btn-arrow">&rarr;</span>
             <span>AVAILABLE FOR INTERNSHIPS</span>
           </a>
@@ -2132,33 +2169,62 @@
         <div class="contact-middle">
           <ul class="contact-channels">
             <li class="channel-item">
-              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=joinwithshivam@gmail.com" target="_blank" rel="noopener noreferrer" class="channel-link">
-                <span class="channel-icon">✉</span>
+              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=joinwithshivam@gmail.com" target="_blank"
+                rel="noopener noreferrer" class="channel-link">
+                <span class="channel-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <rect x="2" y="4" width="20" height="16" rx="2" />
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                  </svg>
+                </span>
                 <span class="channel-text">joinwithshivam@gmail.com</span>
               </a>
             </li>
             <li class="channel-item">
               <a href="https://github.com/webdev-shiv" target="_blank" rel="noopener noreferrer" class="channel-link">
-                <span class="channel-icon">💻</span>
+                <span class="channel-icon">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+                  </svg>
+                </span>
                 <span class="channel-text">github.com/webdev-shiv</span>
               </a>
             </li>
             <li class="channel-item">
-              <a href="https://linkedin.com/in/shivam-gupta44" target="_blank" rel="noopener noreferrer"
+              <a href="https://linkedin.com/in/shivamcodes" target="_blank" rel="noopener noreferrer"
                 class="channel-link">
-                <span class="channel-icon">🔗</span>
-                <span class="channel-text">linkedin.com/in/shivam-gupta44</span>
+                <span class="channel-icon">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
+                  </svg>
+                </span>
+                <span class="channel-text">linkedin.com/in/shivamcodes</span>
               </a>
             </li>
             <li class="channel-item">
               <a href="tel:+918860442240" class="channel-link">
-                <span class="channel-icon">📞</span>
+                <span class="channel-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path
+                      d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                  </svg>
+                </span>
                 <span class="channel-text">+91-8860442240</span>
               </a>
             </li>
             <li class="channel-item">
               <div class="channel-link non-clickable">
-                <span class="channel-icon">📍</span>
+                <span class="channel-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                </span>
                 <span class="channel-text">Delhi, India</span>
               </div>
             </li>

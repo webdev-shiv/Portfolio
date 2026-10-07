@@ -404,6 +404,7 @@
 
   // Active Navigation link updater based on scroll position
   const navLinks = document.querySelectorAll('.nav-link');
+  const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
   const sections = document.querySelectorAll('section[id]');
 
   function updateActiveNav() {
@@ -429,9 +430,67 @@
         link.classList.add('active');
       }
     });
+
+    mobileNavLinks.forEach(link => {
+      link.classList.remove('active');
+      const href = link.getAttribute('href');
+      if (href === `#${currentId}`) {
+        link.classList.add('active');
+      }
+    });
   }
 
   window.addEventListener('scroll', updateActiveNav, { passive: true });
+
+  // Mobile Drawer Navigation Controller
+  function initMobileDrawer() {
+    const toggleBtn = document.getElementById('mobile-menu-toggle');
+    const drawer = document.getElementById('mobile-nav-drawer');
+    const backdrop = document.getElementById('mobile-nav-backdrop');
+    const closeBtn = document.getElementById('mobile-nav-close');
+    const drawerLinks = document.querySelectorAll('.mobile-nav-link, .mobile-nav-cta');
+
+    if (!toggleBtn || !drawer) return;
+
+    function openDrawer() {
+      drawer.classList.add('open');
+      drawer.setAttribute('aria-hidden', 'false');
+      toggleBtn.classList.add('is-active');
+      toggleBtn.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeDrawer() {
+      drawer.classList.remove('open');
+      drawer.setAttribute('aria-hidden', 'true');
+      toggleBtn.classList.remove('is-active');
+      toggleBtn.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+
+    toggleBtn.addEventListener('click', () => {
+      if (drawer.classList.contains('open')) {
+        closeDrawer();
+      } else {
+        openDrawer();
+      }
+    });
+
+    if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+    if (backdrop) backdrop.addEventListener('click', closeDrawer);
+
+    drawerLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        closeDrawer();
+      });
+    });
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && drawer.classList.contains('open')) {
+        closeDrawer();
+      }
+    });
+  }
 
   // ==========================================================================
   // 3D RADIAL FANNED CARDS & TURNTABLE COMPASS DIAL CONTROLLER
@@ -506,26 +565,28 @@
       // Clamped boundary: stuck at 1st card on left, stuck at last card on right
       const activeIdx = Math.max(0, Math.min(totalCards - 1, idx));
       activeIndex = activeIdx;
-      const isMobile = window.innerWidth < 768;
-      const xSpacing = isMobile ? 85 : 138;
-      const yArch = isMobile ? 12 : 20;
+      
+      // Dynamic container-width relative spacing (Works on Mobile Desktop Site, tablets, 4K)
+      const containerW = arena.clientWidth || window.innerWidth;
+      const xSpacing = Math.max(65, Math.min(containerW * 0.22, 138));
+      const yArch = Math.max(8, Math.min(containerW * 0.03, 20));
 
       cards.forEach((card, i) => {
         const diff = i - activeIdx;
         const absDiff = Math.abs(diff);
 
         // Radial fanned deck geometry
-        const rot = diff * 14;
+        const rot = diff * (containerW < 480 ? 10 : 14);
         const tx = diff * xSpacing;
         let ty = absDiff * yArch;
-        let scale = Math.max(0.8, 1 - absDiff * 0.06);
-        let opacity = Math.max(0.38, 1 - absDiff * 0.16);
+        let scale = Math.max(0.75, 1 - absDiff * 0.07);
+        let opacity = Math.max(0.35, 1 - absDiff * 0.16);
 
         if (diff === 0) {
           card.classList.add('is-active');
           card.setAttribute('aria-selected', 'true');
           ty -= 22;
-          scale = 1.06;
+          scale = containerW < 480 ? 1.0 : 1.06;
           opacity = 1.0;
         } else {
           card.classList.remove('is-active');
@@ -1237,6 +1298,7 @@
   resizeCanvas();
   updateTargetFromScroll();
   updateActiveNav();
+  initMobileDrawer();
   initOpeningAnimation();
   initPreloader();
   initRadialDeck();
