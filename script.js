@@ -264,7 +264,7 @@
     const maxScroll = getMaxScroll();
     const scrollY = window.scrollY || window.pageYOffset || 0;
     const rawProgress = Math.min(Math.max(scrollY / maxScroll, 0), 1);
-    
+
     // Direct linear synchronization: scroll wheel speed matches animation speed exactly
     targetFrame = 1 + rawProgress * (TOTAL_FRAMES - 1);
 
@@ -565,7 +565,7 @@
       // Clamped boundary: stuck at 1st card on left, stuck at last card on right
       const activeIdx = Math.max(0, Math.min(totalCards - 1, idx));
       activeIndex = activeIdx;
-      
+
       // Dynamic container-width relative spacing (Works on Mobile Desktop Site, tablets, 4K)
       const containerW = arena.clientWidth || window.innerWidth;
       const xSpacing = Math.max(65, Math.min(containerW * 0.22, 138));
@@ -929,7 +929,7 @@
     // Horizontal Scroll (Trackpad & Mouse Wheel) - ONLY intercept horizontal scroll on cards
     arena.addEventListener('wheel', (e) => {
       const isHorizontal = Math.abs(e.deltaX) > Math.abs(e.deltaY) || e.shiftKey;
-      
+
       if (isHorizontal && (Math.abs(e.deltaX) > 1 || e.shiftKey)) {
         e.preventDefault();
         const delta = e.shiftKey ? (e.deltaY || e.deltaX) : e.deltaX;
@@ -1125,7 +1125,7 @@
             const originalText = modalCopyBtn.textContent;
             modalCopyBtn.textContent = 'COPIED!';
             setTimeout(() => { modalCopyBtn.textContent = originalText; }, 2000);
-          }).catch(() => {});
+          }).catch(() => { });
         }
       });
     }
@@ -1167,7 +1167,7 @@
     let finishTriggered = false;
 
     // Exposed callback so initPreloader can push actual loading % (0 to 100)
-    updateLiquidProgress = function(pct) {
+    updateLiquidProgress = function (pct) {
       if (pct > targetPercent) {
         targetPercent = Math.min(100, pct);
       }
@@ -1307,122 +1307,338 @@
   initContactSection();
   requestAnimationFrame(animationLoop);
 
-/* ==========================================================================
-   CONTACT SECTION ANIMATIONS & TERMINAL TYPING INTERFACE
-   ========================================================================== */
-function initContactSection() {
-  const contactSection = document.getElementById('contact');
-  if (!contactSection) return;
+  /* ==========================================================================
+     CONTACT SECTION ANIMATIONS & TERMINAL TYPING INTERFACE
+     ========================================================================== */
+  function initContactSection() {
+    const contactSection = document.getElementById('contact');
+    if (!contactSection) return;
 
-  const terminalBody = contactSection.querySelector('.terminal-body');
-  if (!terminalBody) return;
+    const terminalBody = contactSection.querySelector('.terminal-body');
+    if (!terminalBody) return;
 
-  const isReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  let hasTyped = false;
+    const isReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let hasTyped = false;
 
-  const startTerminalTyping = () => {
-    if (hasTyped) return;
-    hasTyped = true;
+    const startTerminalTyping = () => {
+      if (hasTyped) return;
+      hasTyped = true;
 
-    if (isReducedMotion) {
-      return;
-    }
-
-    // Prepare typing terminal interface
-    terminalBody.innerHTML = '';
-
-    const charDelayMin = 35;
-    const charDelayMax = 50;
-
-    const getRandomDelay = () => Math.floor(Math.random() * (charDelayMax - charDelayMin + 1)) + charDelayMin;
-    const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
-
-    const typeText = async (element, text) => {
-      for (let i = 0; i < text.length; i++) {
-        element.textContent += text[i];
-        await sleep(getRandomDelay());
+      if (isReducedMotion) {
+        return;
       }
+
+      // Prepare typing terminal interface
+      terminalBody.innerHTML = '';
+
+      const charDelayMin = 35;
+      const charDelayMax = 50;
+
+      const getRandomDelay = () => Math.floor(Math.random() * (charDelayMax - charDelayMin + 1)) + charDelayMin;
+      const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
+      const typeText = async (element, text) => {
+        for (let i = 0; i < text.length; i++) {
+          element.textContent += text[i];
+          await sleep(getRandomDelay());
+        }
+      };
+
+      (async () => {
+        // Step 1: Command 1 ($ shivam --profile)
+        const p1 = document.createElement('p');
+        p1.className = 'term-line';
+        p1.innerHTML = `<span class="term-prompt">$ </span><span class="term-cmd"></span><span class="term-cursor">_</span>`;
+        terminalBody.appendChild(p1);
+
+        const cmd1Span = p1.querySelector('.term-cmd');
+        const cursor1 = p1.querySelector('.term-cursor');
+
+        await sleep(200);
+        await typeText(cmd1Span, 'shivam --profile');
+        await sleep(300);
+        if (cursor1) cursor1.remove();
+
+        // Step 2: Line-by-line profile outputs
+        const outputs = [
+          '> Name: Shivam Gupta',
+          '> Institution: RKGIT, Ghaziabad (B.Tech CSE)',
+          '> Focus: Full-Stack (MERN) • Backend • Automation',
+          '> Skills: Python, Java, C, DSA, React, Node, Express, MongoDB, Supabase',
+          '> Hackathons: Paytm Hackathon (Top 5) • SIH 2026 Internal Shortlist (Team Hactivators)'
+        ];
+
+        for (const lineText of outputs) {
+          const pOut = document.createElement('p');
+          pOut.className = 'term-output';
+          pOut.textContent = lineText;
+          terminalBody.appendChild(pOut);
+          await sleep(90);
+        }
+
+        await sleep(350);
+
+        // Step 3: Command 2 ($ shivam --hire)
+        const p2 = document.createElement('p');
+        p2.className = 'term-line';
+        p2.innerHTML = `<span class="term-prompt">$ </span><span class="term-cmd"></span><span class="term-cursor">_</span>`;
+        terminalBody.appendChild(p2);
+
+        const cmd2Span = p2.querySelector('.term-cmd');
+        const cursor2 = p2.querySelector('.term-cursor');
+
+        await sleep(200);
+        await typeText(cmd2Span, 'shivam --hire');
+        await sleep(300);
+        if (cursor2) cursor2.remove();
+
+        // Step 4: Status output
+        const pSuccess = document.createElement('p');
+        pSuccess.className = 'term-output term-success';
+        pSuccess.textContent = '> Status: Open for Software Development & Full-Stack Internships!';
+        terminalBody.appendChild(pSuccess);
+
+        await sleep(250);
+
+        // Step 5: Final blinking cursor line
+        const pCursor = document.createElement('p');
+        pCursor.className = 'term-line';
+        pCursor.innerHTML = `<span class="term-prompt">$ </span><span class="term-cursor">_</span>`;
+        terminalBody.appendChild(pCursor);
+      })();
     };
 
-    (async () => {
-      // Step 1: Command 1 ($ shivam --profile)
-      const p1 = document.createElement('p');
-      p1.className = 'term-line';
-      p1.innerHTML = `<span class="term-prompt">$ </span><span class="term-cmd"></span><span class="term-cursor">_</span>`;
-      terminalBody.appendChild(p1);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            contactSection.classList.add('in-view');
+            startTerminalTyping();
+            observer.unobserve(contactSection);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
 
-      const cmd1Span = p1.querySelector('.term-cmd');
-      const cursor1 = p1.querySelector('.term-cursor');
+    observer.observe(contactSection);
 
-      await sleep(200);
-      await typeText(cmd1Span, 'shivam --profile');
-      await sleep(300);
-      if (cursor1) cursor1.remove();
+    initContactForm();
+    initSmoothScroll();
+  }
 
-      // Step 2: Line-by-line profile outputs
-      const outputs = [
-        '> Name: Shivam Gupta',
-        '> Institution: RKGIT, Ghaziabad (B.Tech CSE)',
-        '> Focus: Full-Stack (MERN) • Backend • Automation',
-        '> Skills: Python, Java, C, DSA, React, Node, Express, MongoDB, Supabase',
-        '> Hackathons: Paytm Hackathon (Top 5) • SIH 2026 Internal Shortlist (Team Hactivators)'
-      ];
+  /* ==========================================================================
+     CONTACT FORM VALIDATION, SUBMISSION & SMOOTH SCROLL HANDLERS
+     ========================================================================== */
+  function initContactForm() {
+    const form = document.getElementById('contact-me-form');
+    if (!form) return;
 
-      for (const lineText of outputs) {
-        const pOut = document.createElement('p');
-        pOut.className = 'term-output';
-        pOut.textContent = lineText;
-        terminalBody.appendChild(pOut);
-        await sleep(90);
+    const nameInput = document.getElementById('contact-name');
+    const emailInput = document.getElementById('contact-email');
+    const messageInput = document.getElementById('contact-message');
+    const submitBtn = document.getElementById('contact-submit-btn');
+    const feedbackEl = document.getElementById('contact-form-feedback');
+
+    const nameError = document.getElementById('name-error-msg');
+    const emailError = document.getElementById('email-error-msg');
+    const messageError = document.getElementById('message-error-msg');
+
+    function validateEmail(email) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
+    }
+
+    function setError(input, errorEl, msg) {
+      if (input) {
+        input.classList.add('input-error');
+        input.setAttribute('aria-invalid', 'true');
+      }
+      if (errorEl) {
+        errorEl.textContent = msg;
+        errorEl.classList.add('visible');
+      }
+    }
+
+    function clearError(input, errorEl) {
+      if (input) {
+        input.classList.remove('input-error');
+        input.removeAttribute('aria-invalid');
+      }
+      if (errorEl) {
+        errorEl.textContent = '';
+        errorEl.classList.remove('visible');
+      }
+    }
+
+    // Clear errors live as user types
+    [nameInput, emailInput, messageInput].forEach((input) => {
+      if (!input) return;
+      input.addEventListener('input', () => {
+        if (input === nameInput) clearError(nameInput, nameError);
+        if (input === emailInput) clearError(emailInput, emailError);
+        if (input === messageInput) clearError(messageInput, messageError);
+      });
+    });
+
+    // Web3Forms Access Key Configuration
+    // Replace 'YOUR_WEB3FORMS_ACCESS_KEY' below with your actual Web3Forms Key!
+    const WEB3FORMS_ACCESS_KEY = "3c0b8f63-71a9-4a86-a865-6f9b15784a8b";
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      // Reset previous feedback state
+      feedbackEl.className = 'contact-feedback';
+      feedbackEl.innerHTML = '';
+
+      let isValid = true;
+
+      // Validate Name
+      if (!nameInput.value.trim() || nameInput.value.trim().length < 2) {
+        setError(nameInput, nameError, 'Please enter your name (at least 2 characters).');
+        isValid = false;
+      } else {
+        clearError(nameInput, nameError);
       }
 
-      await sleep(350);
+      // Validate Email
+      if (!emailInput.value.trim() || !validateEmail(emailInput.value)) {
+        setError(emailInput, emailError, 'Please enter a valid email address (e.g. name@example.com).');
+        isValid = false;
+      } else {
+        clearError(emailInput, emailError);
+      }
 
-      // Step 3: Command 2 ($ shivam --hire)
-      const p2 = document.createElement('p');
-      p2.className = 'term-line';
-      p2.innerHTML = `<span class="term-prompt">$ </span><span class="term-cmd"></span><span class="term-cursor">_</span>`;
-      terminalBody.appendChild(p2);
+      // Validate Message
+      if (!messageInput.value.trim() || messageInput.value.trim().length < 5) {
+        setError(messageInput, messageError, 'Please enter your message (at least 5 characters).');
+        isValid = false;
+      } else {
+        clearError(messageInput, messageError);
+      }
 
-      const cmd2Span = p2.querySelector('.term-cmd');
-      const cursor2 = p2.querySelector('.term-cursor');
+      if (!isValid) {
+        feedbackEl.className = 'contact-feedback visible show-error';
+        feedbackEl.innerHTML = '<strong>Validation Error:</strong> Please fix the highlighted fields above before sending.';
+        return;
+      }
 
-      await sleep(200);
-      await typeText(cmd2Span, 'shivam --hire');
-      await sleep(300);
-      if (cursor2) cursor2.remove();
+      // Prevent duplicate submissions while sending
+      submitBtn.disabled = true;
+      const btnTextEl = submitBtn.querySelector('.btn-text');
+      const originalBtnText = btnTextEl ? btnTextEl.textContent : 'Send Message';
+      if (btnTextEl) btnTextEl.textContent = 'Sending Message...';
 
-      // Step 4: Status output
-      const pSuccess = document.createElement('p');
-      pSuccess.className = 'term-output term-success';
-      pSuccess.textContent = '> Status: Open for Software Development & Full-Stack Internships!';
-      terminalBody.appendChild(pSuccess);
+      const clientName = nameInput.value.trim();
+      const clientEmail = emailInput.value.trim();
+      const clientMessage = messageInput.value.trim();
 
-      await sleep(250);
+      try {
+        let response, result;
 
-      // Step 5: Final blinking cursor line
-      const pCursor = document.createElement('p');
-      pCursor.className = 'term-line';
-      pCursor.innerHTML = `<span class="term-prompt">$ </span><span class="term-cursor">_</span>`;
-      terminalBody.appendChild(pCursor);
-    })();
-  };
+        if (WEB3FORMS_ACCESS_KEY && WEB3FORMS_ACCESS_KEY !== "YOUR_WEB3FORMS_ACCESS_KEY") {
+          response = await fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+              access_key: WEB3FORMS_ACCESS_KEY,
+              name: clientName,
+              email: clientEmail,
+              message: clientMessage,
+              subject: `New Portfolio Message from ${clientName}`
+            })
+          });
+        } else {
+          response = await fetch('https://formsubmit.co/ajax/joinwithshivam@gmail.com', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+              name: clientName,
+              email: clientEmail,
+              message: clientMessage,
+              _subject: `New Portfolio Message from ${clientName}`
+            })
+          });
+        }
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          contactSection.classList.add('in-view');
-          startTerminalTyping();
-          observer.unobserve(contactSection);
+        result = await response.json().catch(() => ({}));
+
+        if (response.ok || result.success === true || result.success === 'true') {
+          feedbackEl.className = 'contact-feedback visible show-success';
+          feedbackEl.innerHTML = `
+          <strong>Message Delivered! 🎉</strong><br>
+          Thank you, <em>${escapeHtml(clientName)}</em>. Your message has been sent to <code>joinwithshivam@gmail.com</code>. I will reply to your email shortly!
+        `;
+          form.reset();
+        } else {
+          throw new Error(result.message || 'Delivery error');
+        }
+      } catch (err) {
+        const mailtoUrl = `mailto:joinwithshivam@gmail.com?subject=${encodeURIComponent('Portfolio Message from ' + clientName)}&body=${encodeURIComponent('Name: ' + clientName + '\nEmail: ' + clientEmail + '\n\nMessage:\n' + clientMessage)}`;
+
+        feedbackEl.className = 'contact-feedback visible show-success';
+        feedbackEl.innerHTML = `
+        <strong>Message Prepared!</strong> Opening email client to send to <code>joinwithshivam@gmail.com</code>...<br>
+        <a href="${mailtoUrl}" target="_blank" style="color:#38E54D; font-weight:bold; margin-top:6px; display:inline-block;">Click here if email app didn't open automatically →</a>
+      `;
+        window.location.href = mailtoUrl;
+        form.reset();
+      } finally {
+        submitBtn.disabled = false;
+        if (btnTextEl) btnTextEl.textContent = originalBtnText;
+      }
+    });
+
+    function escapeHtml(str) {
+      return str.replace(/[&<>"']/g, function (m) {
+        return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' }[m];
+      });
+    }
+  }
+
+  function initSmoothScroll() {
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener('click', function (e) {
+        const targetId = this.getAttribute('href');
+        if (!targetId || targetId === '#') return;
+
+        e.preventDefault();
+
+        const contactSec = document.getElementById('contact');
+
+        if (targetId === '#contact' || targetId === '#contact-name' || this.classList.contains('btn-internship-pill')) {
+          if (contactSec) {
+            const navOffset = 90;
+            const targetY = contactSec.getBoundingClientRect().top + window.pageYOffset - navOffset;
+            window.scrollTo({ top: Math.max(0, targetY), behavior: 'smooth' });
+
+            const nameInput = document.getElementById('contact-name');
+            if (nameInput) {
+              setTimeout(() => nameInput.focus({ preventScroll: true }), 650);
+            }
+          }
+        } else {
+          const targetEl = document.querySelector(targetId);
+          if (targetEl) {
+            targetEl.scrollIntoView({ behavior: 'smooth' });
+          }
+        }
+
+        if (history.pushState) {
+          history.pushState(null, null, targetId);
+        } else {
+          location.hash = targetId;
         }
       });
-    },
-    { threshold: 0.15 }
-  );
+    });
+  }
 
-  observer.observe(contactSection);
-}
 
   // Dynamic discovery if server supports /api/frames
   fetch('/api/frames')
@@ -1444,5 +1660,5 @@ function initContactSection() {
         }
       }
     })
-    .catch(() => {});
+    .catch(() => { });
 })();
